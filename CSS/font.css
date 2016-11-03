@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+/* ------------------------------------
+Font Style
+------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div.globalnav,
+#copyright,
+section .more-link a,
+.prevnext-page,
+#pagetop {
+	font-family: "Century Gothic", sans-serif;
+	font-weight: normal;
+}
+
+/* ------------------------------------
+Web Font
+------------------------------------ */
+
+section .entry-dates {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 400;
+}
+
+/* ------------------------------------
+Icon Font fontello
+------------------------------------ */
+
+@font-face {
+	font-family: 'fontello';
+	src: url('../font/fontello.eot?65619670');
+	src: url('../font/fontello.eot?65619670#iefix') format('embedded-opentype'),
+		url('../font/fontello.woff?65619670') format('woff'),
+		url('../font/fontello.ttf?65619670') format('truetype'),
+		url('../font/fontello.svg?65619670#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	margin-right: 0.3em;
+}
+
+.widget-title.icon-crown:before {
+	margin-right: 0.5em;
+}
+
+.icon-menu:before,
+.icon-up:before,
+.icon-cancel:before,
+#header .searchbox .icon-search:before,
+.entry-dates .icon-crown:before,
+.icon-right:before {
+	margin-right: 0;
+}
+
+.icon-cancel:before {
+	content: '\61';
+} /* 'a' */
+
+.icon-tag:before {
+	content: '\62';
+} /* 'b' */
+
+.icon-comment:before {
+	content: '\63';
+} /* 'c' */
+
+.icon-down:before {
+	content: '\64';
+} /* 'd' */
+
+.icon-rss:before {
+	content: '\65';
+} /* 'e' */
+
+.links-aicon li a[href*="facebook.com"] .icon-social:before,
+.icon-facebook:before {
+	content: '\66';
+} /* 'f' */
+
+.links-aicon li a[href*="plus.google.com"] .icon-social:before,
+.icon-gplus:before {
+	content: '\67';
+} /* 'g' */
+
+.icon-home:before {
+	content: '\68';
+} /* 'h' */
+
+.icon-doc:before {
+	content: '\69';
+} /* 'i' */
+
+.icon-folder-open:before {
+	content: '\6a';
+} /* 'j' */
+
+.icon-crown:before {
+	content: '\6b';
+} /* 'k' */
+
+.icon-left:before {
+	content: '\6c';
+} /* 'l' */
+
+.icon-mail:before {
+	content: '\6d';
+} /* 'm' */
+
+.links-aicon li a[href*="tumblr.com"] .icon-social:before,
+.icon-tumblr:before {
+	content: '\6e';
+} /* 'n' */
+
+.icon-menu:before {
+	content: '\6f';
+} /* 'o' */
+
+.icon-pencil:before {
+	content: '\70';
+} /* 'p' */
+
+.icon-link-ext:before {
+	content: '\71';
+} /* 'q' */
+
+.icon-right:before {
+	content: '\72';
+} /* 'r' */
+
+.icon-search:before {
+	content: '\73';
+} /* 's' */
+
+.links-aicon li a[href*="twitter.com"] .icon-social:before,
+.icon-twitter:before {
+	content: '\74';
+} /* 't' */
+
+.icon-up:before {
+	content: '\75';
+} /* 'u' */
+
+.links-aicon li a[href*="pinterest.com"] .icon-social:before,
+.icon-pinterest:before {
+	content: '\76';
+} /* 'v' */
+
+.icon-calendar:before {
+	content: '\77';
+} /* 'w' */
+
+.icon-box:before {
+	content: '\78';
+} /* 'x' */
+
+.links-aicon li a[href*="instagram.com"] .icon-social:before,
+.icon-instagramm:before {
+	content: '\79';
+} /* 'y' */
+
+.links-aicon li a[href*="linkedin.com"] .icon-social:before,
+.icon-linkedin:before {
+	content: '\7a';
+} /* 'z' */
+
+.links-aicon li a[href*="flickr.com"] .icon-social:before,
+.icon-flickr:before {
+	content: '\41';
+} /* 'A' */
+
+.links-aicon li a[href*="dribbble.com"] .icon-social:before,
+.icon-dribbble:before {
+	content: '\42';
+} /* 'B' */
+
+.links-aicon li a[href*="youtube.com"] .icon-social:before,
+.icon-youtube:before {
+	content: '\43';
+} /* 'C' */
+
+.links-aicon li a[href*="vimeo.com"] .icon-social:before,
+.icon-vimeo:before {
+	content: '\44';
+} /* 'D' */
+
+.links-aicon li a[href*="github.com"] .icon-social:before,
+.icon-github:before {
+	content: '\45';
+} /* 'E' */
+
+.icon-cog:before {
+	content: '\46';
+} /* 'F' */
+
+.icon-reddit:before {
+	content: '\47';
+} /* 'G' */
+
+.icon-stumbleupon:before {
+	content: '\48';
+} /* 'H' */
+
+.icon-pocket:before {
+	content: '\49';
+} /* 'I' */
+
+.icon-smile:before {
+	content: '\4a';
+} /* 'J' */
+
+.icon-attach:before {
+	content: '\4b';
+} /* 'K' */
+
+.icon-calendar-empty:before {
+	content: '\4c';
+} /* 'L' */
+
+
+/* next content 'M' */
+/* 'M' */
+
+
+/* ------------------------------------
+Icon Font Chocolat
+------------------------------------ */
+
+@font-face {
+	font-family: 'font-chocolat';
+	src:url('../font/font-chocolat/font-chocolat.eot?awhzo5');
+	src:url('../font/font-chocolat/font-chocolat.eot?#iefixawhzo5') format('embedded-opentype'),
+		url('../font/font-chocolat/font-chocolat.woff?awhzo5') format('woff'),
+		url('../font/font-chocolat/font-chocolat.ttf?awhzo5') format('truetype'),
+		url('../font/font-chocolat/font-chocolat.svg?awhzo5#font-chocolat') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.ms-fc {
+	font-family: 'font-chocolat';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-c-"]:before,
+[class*=" icon-c-"]:before {
+	font-family: 'font-chocolat';
+}
+
+.icon-c-entrydates:before {
+	content: "\e600";
+}
+
+.icon-c-morelink:before {
+	content: "\e601";
+}
+
+.icon-c-pagetop:before {
+	content: "\e602";
+}
