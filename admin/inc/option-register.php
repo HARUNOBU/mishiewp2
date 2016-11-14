@@ -1,10 +1,10 @@
 <?php
 /**
  * Option Register
- * @package   Chocolat
+ * @package   mishie
  * @copyright Copyright (c) 2014 Mignon Style
  * @license   GNU General Public License v2.0
- * @since     Chocolat 1.1.6
+ * @since     mishie 1.1.6
  */
 
 /**
@@ -186,18 +186,18 @@ function mishie_media_uploader( $options, $option_id, $option_name, $option_desc
 			<div class="upload-remove <?php echo esc_attr( $upload_remove_class ); ?>">
 				<input id="mishie_theme_options[<?php echo esc_attr( $option_name ); ?>]" name="mishie_theme_options[<?php echo esc_attr( $option_name ); ?>]" value="<?php echo esc_url( $options[$option_name] ); ?>" type="hidden" class="regular-text" />
 				<table><tr>
-					<td class="upload-button"><input id="option-upload-<?php echo esc_attr( $option_id ); ?>" class="button option-upload-button" value="<?php _e( 'Select Image', 'chocolat' ); ?>" type="button"></td>
+					<td class="upload-button"><input id="option-upload-<?php echo esc_attr( $option_id ); ?>" class="button option-upload-button" value="<?php _e( 'Select Image', 'mishie' ); ?>" type="button"></td>
 					<?php if ( ! empty( $options[$option_name] ) ) {
 						$image_src = esc_url( $options[$option_name] );
 						if( preg_match( '/(^.*\.jpg|jpeg|png|gif|ico*)/i', $image_src ) ) {
 							echo '<td class="upload-preview"><img src="'.$image_src.'" alt="" /></td>';
 						}
 					} ?>
-					<td class="remove-button"><input id="option-remove-<?php echo esc_attr( $option_id ); ?>" class="button option-remove-button" value="<?php _e( 'Delete Image', 'chocolat' ); ?>" type="button"></td>
+					<td class="remove-button"><input id="option-remove-<?php echo esc_attr( $option_id ); ?>" class="button option-remove-button" value="<?php _e( 'Delete Image', 'mishie' ); ?>" type="button"></td>
 				</tr></table>
 			</div>
 		</div>
 	<?php else : ?>
-		<p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your WordPress.', 'chocolat' ); ?></p>
+		<p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your WordPress.', 'mishie' ); ?></p>
 <?php endif;
 }

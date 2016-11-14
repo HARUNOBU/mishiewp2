@@ -74,7 +74,7 @@ a {
 }
 
 a:hover {
-	color: #895628;
+	color: #72a653;
 }
 
 a:hover img {
@@ -334,13 +334,14 @@ background-color: transparent;
 ------------------------------------ */
 
 .breadcrumb {
-	font-size: 0.8em;
-	margin: 20px 5px 0;
+	background-color:#FFF9E5;
+	font-size: 1em;
+	margin: 0 20px 5px 0;
 	padding: 0;
 }
 
 .breadcrumb a {
-	color: #895628;
+	color: #72a653;
 }
 
 .breadcrumb a:hover {
@@ -364,7 +365,7 @@ background-color: transparent;
 
 /* breadcrumb home */
 .breadcrumb li .bread-home {
-	display: none;
+	
 }
 
 footer{
@@ -423,33 +424,36 @@ footer{
     background: #81C7D4;
     width: 60px;
     height: 60px;
-    position: relative;
+   	position:relative;
     text-align: center;
-	position:absolute; top:100px; left:1.2em; 
-	z-index: 0;
+	top:10px; left:10px; 
+	z-index: 1;
 }
 .burst-12:before, .burst-12:after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     height: 60px;
     width: 60px;
     background: #81C7D4;
+	z-index: 2;
 	}
 .burst-12:before {
+	
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
     -ms-transform: rotate(30deg);
-         -o-transform: rotate(30deg);
-		 z-index: 1;
+    -o-transform: rotate(30deg);
+		
 }
 .burst-12:after {
+	
     -webkit-transform: rotate(60deg);
     -moz-transform: rotate(60deg);
     -ms-transform: rotate(60deg);
     -o-transform: rotate(60deg);
-	z-index: 2;
+	
 }
 
 
@@ -461,6 +465,7 @@ footer{
 	font-size:16px;
 	line-height: 1;
 	padding-top: 22px;
+	height: 150px;
 	
 }
 
@@ -469,18 +474,25 @@ footer{
 }
 
   .entry-dates .entry-date span.entry-year {
-	font-size: 15px;
+	font-size: 12px;
 }
 
   .entry-dates .entry-date span.entry-month {
-	font-size: 22px;
-	margin-top: 3px;
+	font-size: 18px;
+	margin-top: 2px;
 }
 
- .sticky .entry-dates .entry-date {
-	display: none;
+.entry-dates{
+	float:left;
 }
-
+div.entry-title{
+	float:left;
+	margin-left :20px;
+	width:90%;
+}
+.entry-headermiddle{
+	clear:both; 
+}
 /* entry-title */
   .entry-title a,
 .single   .entry-title .post-title {
@@ -495,7 +507,7 @@ footer{
 }
 .post-title{
 	margin-left:3em;
-	background-color:DFF0D8;
+	background-color:#DFF0D8;
 	color:#000;
 	margin-bottom:2px;
 }
@@ -508,10 +520,27 @@ footer{
 	color:#fafafa;
 	width: 60px;
     height: 60px;
-	position:absolute; top:10px; left:0em; 
+	position:absolute;
+	top:10px; left:0em;  
 	z-index: 3;
 	
 	}
+	
+	.postedit{
+    
+}
+	
+.posteditcircle{
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #999;/* 円の色 */
+}
+
+
+
 
 .profile{
 	margin-top:0;
@@ -570,36 +599,7 @@ h4.third-title{
 5.2.3 - section-bottom
 ------------------------------------ */
 
-/* entry_meta */
-section .entry_meta p {
-    float: left;
-    margin: 0 1em 0 0;
-}
 
-section .entry_meta p:last-child {
-    margin-right: 0;
-}
-
-section .entry_meta p.entry-author {
-    float: right;
-}
-
-/* section-bottom entry_meta */
-section .section-bottom {
-    margin-top: 40px;
-}
-
-section .section-bottom:before {
-    content: "";
-    display: block;
-    height: 0px;
-}
-
-.section-bottom .section-bottom-inner {
-    background: #fff;
-    min-height: 0px;
-    padding: 0.5em 0 1em;
-}
 
 
 #top_info ul {
@@ -694,4 +694,264 @@ section .section-bottom:before {
 #top_info h3 a:hover, #top_info h3 a a:active {
     color: #66a5ed;
     text-decoration: underline;
+}
+
+
+/* ------------------------------------
+5.2 - section
+------------------------------------ */
+
+/* section */
+section .section-top {
+	margin: 30px 0 25px;
+	position: relative;
+}
+
+#content-inner .content-header,
+section .section-top,
+section .section-center,
+section .section-bottom .entry_meta {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* ------------------------------------
+5.2.1 - section-top
+------------------------------------ */
+
+/* entry-edit, comment-list reply */
+section .entry-edit a,
+.comment-list .edit-link a {
+	background: #72a653;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	float: right;
+	padding: 0.2em 1em;
+}
+
+section .entry-edit a:hover,
+.comment-list .edit-link a:hover {
+	background: #f56993;
+}
+
+/* entry-edit */
+section .entry-edit {
+	font-size: 0.9em;
+	position: relative;
+	top: -10px;
+}
+
+
+
+
+
+/* ------------------------------------
+5.2.2 - section-center
+------------------------------------ */
+
+/* entry-thumbnail */
+section .entry-thumbnail {
+	margin: 25px 0;	
+	text-align: center;
+	background-color: aliceblue;
+	border-style:none;
+
+}
+
+/* entry-content */
+section .entry-content {
+	margin: 30px 0;
+}
+
+/* last-update */
+section .last-update {
+	margin-top: -15px;
+	text-align: right;
+}
+
+/* more-link, entry_meta */
+section .more-link a,
+section .entry_meta p,
+section .entry_meta p a {
+	color: #72a653;
+}
+
+section .more-link a:hover,
+section .entry_meta p a:hover {
+	color: #f56993;
+}
+
+/* more-link */
+section .more-link {
+	float: right;
+	font-size: 0.95em;
+	height: 70px;
+	line-height: 1.2;
+	margin-bottom: -20px;
+	text-align: center;
+	width: 70px;
+}
+
+section .more-link a,
+section .more-link a span.ro-off,
+section .more-link a span.ro-on {
+	background: url(img/base/more-link.png) no-repeat 0 0;
+	padding-top: 19px;
+}
+
+section .more-link a {
+	color: #72a653;
+	display: block;
+	height: 70px;
+	width: 70px;
+}
+
+section .more-link a span.ro-on {
+	background-position: -70px 0;
+}
+
+section .more-link a:hover {
+	color: #fff;
+	-webkit-transition: none;
+	-moz-transition:    none;
+	transition:         none;
+}
+
+/* ------------------------------------
+5.2.3 - section-bottom
+------------------------------------ */
+
+/* entry_meta */
+section .entry_meta p {
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+section .entry_meta p:last-child {
+    margin-right: 0;
+}
+
+section .entry_meta p.entry-author {
+    float: right;
+}
+
+/* section-bottom entry_meta */
+section .section-bottom {
+    margin-top: 40px;
+}
+
+section .section-bottom:before {
+    content: "";
+    display: block;
+    height: 0px;
+}
+
+
+
+/* format */
+.format-aside .entry_meta .entry-tags,
+.format-status .entry_meta .entry-tags,
+.format-link .entry_meta .entry-tags {
+	display: none;
+}
+
+div.entry-post{
+	margin:5px;
+	padding:10px;
+	background-color: aliceblue;
+	border:#72a653 solid 3px;	
+}
+
+/* ------------------------------------
+5.13 - paging
+------------------------------------ */
+
+.prevnext-page {
+}
+
+.paging {
+	line-height: 1.3;
+	padding: 25px 10px 20px;
+}
+
+.paging a {
+	color: #603c21;
+}
+
+.paging a:hover {
+	color: #f56993;
+}
+
+.prev-btn{
+	font-size:20px;
+	transform: rotate(-90deg);
+}
+
+.next-btn {
+	font-size:20px;
+	transform: rotate(90deg);
+}
+
+.paging a:hover .prev-btn:before{
+	background: #f56993;
+	color: #fff;
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	transition:         0.5s;
+	
+}
+.paging a:hover .next-btn:before {
+	background: #f56993;
+	color: #fff;
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	transition:         0.5s;
+	
+}
+
+.paging .page-prev,
+.paging .page-new {
+	font-size:20px; 
+	display: table;
+	margin: 5px 0;
+}
+
+.paging .page-prev {
+	float: left;
+}
+
+.paging .page-new {
+	float: right;
+}
+
+.paging p {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.paging .prev-btn:before,
+.paging .next-btn:before {
+	background: #72a653;
+	border-radius: 15px; /* 50% */
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 30px;
+}
+
+.paging .prev-link {
+	padding-left: 10px;
+}
+
+.paging .next-link {
+	padding-right: 10px;
+}
+
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
 }

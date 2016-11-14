@@ -37,11 +37,12 @@
         <p class="eigyo"><strong>営業時間：10：00～20:00　定休日火曜日</strong></p>
       </div>
     </div>
+    <?php if ( is_front_page()  ) : ?>
     <div class="jumbotron hero-1">    
 	  <div class="row">
 	    <div class="col-md-6">
 <?php 
-			if ( is_front_page() || is_home() ) : ?>
+			if ( is_front_page()  ) : ?>
 				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 			<?php else : ?>
 				<p class="site-title"><?php bloginfo( 'name' ); ?></p> 
@@ -60,6 +61,26 @@
         </div>
       </div> 
     </div>
+    <?php elseif (is_page())  : ?>
+    	<div class="jumbotron hero-2">
+      
+      
+    	</div>
+    <?php elseif (is_single())  : ?>
+       	<div class="jumbotron hero-3">      
+      
+    	</div> 
+    <?php elseif (is_archive())  : ?>
+       	<div class="jumbotron hero-4">      
+      
+    	</div> 
+    <?php else  : ?>
+       	<div class="jumbotron hero-5">     
+      
+    	</div> 
+    <?php endif;  ?>
+        
+            
     
 		
 

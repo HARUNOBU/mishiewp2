@@ -49,8 +49,9 @@
 <section> 
     <?php
 if ( ! is_attachment() ) {
-    mishie_related_post_list( 'related' );
-    mishie_new_post_list( 'new' );
+    
+    mishie_new_post_list( 'news' );
+	mishie_new_archive_list( 'news' );
     ///mishie_ad_widget_medium_bottom( 'center' );
 }
 

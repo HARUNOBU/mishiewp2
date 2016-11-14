@@ -1,0 +1,1456 @@
+# Copyright (C) Mignon Style
+# This file is distributed under the GNU General Public License v2.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: chocolat\n"
+"POT-Creation-Date: 2015-03-04 02:52+0900\n"
+"PO-Revision-Date: 2015-03-04 02:52+0900\n"
+"Last-Translator: \n"
+"Language-Team: Mignon Style <mignonxstyle@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;__ngettext:1,2;"
+"__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:19
+#, php-format
+msgid "%d Comments"
+msgstr ""
+
+#: ../comments.php:50
+msgid "TrackBack URL"
+msgstr ""
+
+#: ../content-none.php:23 ../functions.php:660 ../functions.php:1583
+msgid "404 Not found"
+msgstr ""
+
+#: ../content-none.php:25 ../functions.php:1647
+msgid "Nothing Found"
+msgstr ""
+
+#: ../content-none.php:31
+msgid "The page you're looking for can't be found."
+msgstr ""
+
+#: ../content-none.php:32
+#, php-format
+msgid "Try retyping the URL.%2$sOr use the search box, or going back to %1$s."
+msgstr ""
+
+#: ../content-none.php:35
+#, php-format
+msgid "We found no results for \"%s\"."
+msgstr ""
+
+#: ../content-none.php:36
+#, php-format
+msgid "Try different search words, or going back to %s."
+msgstr ""
+
+#: ../content-none.php:39
+msgid "The info you're looking for can't be found."
+msgstr ""
+
+#: ../content-none.php:40
+#, php-format
+msgid "Enter a keywords in the search field, or going back to %s."
+msgstr ""
+
+#: ../content-single.php:13 ../content.php:13 ../functions.php:479
+#: ../functions.php:527
+msgid "Edit"
+msgstr ""
+
+#: ../content-top.php:20
+#, php-format
+msgid "Post Type : %s"
+msgstr ""
+
+#: ../content-top.php:23 ../content-top.php:27
+#, php-format
+msgid "Category : %s"
+msgstr ""
+
+#: ../content-top.php:25
+#, php-format
+msgid "Search Results of \"%s\""
+msgstr ""
+
+#: ../content-top.php:29
+#, php-format
+msgid "Tag : %s"
+msgstr ""
+
+#: ../content-top.php:31 ../functions.php:666 ../functions.php:1609
+#: ../functions.php:1612
+msgid "Y"
+msgstr ""
+
+#: ../content-top.php:33 ../functions.php:668
+msgid "F Y"
+msgstr ""
+
+#: ../content-top.php:35 ../functions.php:670
+msgid "F j, Y"
+msgstr ""
+
+#: ../content-top.php:37
+#, php-format
+msgid "Author : %s"
+msgstr ""
+
+#: ../content-top.php:39
+msgid "Archives"
+msgstr ""
+
+#: ../content-top.php:43 ../functions.php:1580
+#, php-format
+msgid "%d posts"
+msgstr ""
+
+#: ../footer.php:39
+msgid "PAGE TOP"
+msgstr ""
+
+#: ../functions.php:43
+msgid ""
+"Chocolat is a simple WordPress theme for the blog. Use the Responsive layout "
+"of CSS media queries, and automatically respond to tablets and smartphones. "
+"Equipped with its own widget, it is also possible to display ads easily in "
+"the widget. By theme options, display related posts, new articles you can "
+"easily."
+msgstr ""
+
+#: ../functions.php:155
+msgid "Global Navigation"
+msgstr ""
+
+#: ../functions.php:156 ../admin/theme-options.php:1211
+msgid "Social Links"
+msgstr ""
+
+#: ../functions.php:181
+msgid "leaves"
+msgstr ""
+
+#: ../functions.php:187
+msgid "cutlery"
+msgstr ""
+
+#: ../functions.php:193
+msgid "rose"
+msgstr ""
+
+#: ../functions.php:199
+msgid "bird"
+msgstr ""
+
+#: ../functions.php:269
+msgid "Home"
+msgstr ""
+
+#: ../functions.php:314
+msgid "Sidebar Widget"
+msgstr ""
+
+#: ../functions.php:316
+msgid ""
+"Widgets in this area will be shown at the position that has been set for "
+"\"Sidebar settings\" of theme options (right-hand or left-hand side)."
+msgstr ""
+
+#: ../functions.php:324
+msgid "AdSense Small"
+msgstr ""
+
+#: ../functions.php:326
+msgid "Widgets in this area will be shown at the top of the sidebar widget."
+msgstr ""
+
+#: ../functions.php:334
+msgid "AdSense Medium"
+msgstr ""
+
+#: ../functions.php:336
+msgid "Widgets in this area will be shown after posts of single post page."
+msgstr ""
+
+#: ../functions.php:344
+msgid "AdSense Large"
+msgstr ""
+
+#: ../functions.php:346
+msgid "Widgets in this area will be shown between the footer and sidebar."
+msgstr ""
+
+#: ../functions.php:354
+msgid "Ad Banner"
+msgstr ""
+
+#: ../functions.php:356
+msgid "Widgets in this area will be shown at the bottom of the sidebar widget."
+msgstr ""
+
+#: ../functions.php:364
+msgid "Footer Widget"
+msgstr ""
+
+#: ../functions.php:366
+msgid "Widgets in this area will be shown in the footer."
+msgstr ""
+
+#: ../functions.php:470
+msgid "This comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:478
+msgid "Reply"
+msgstr ""
+
+#: ../functions.php:519
+#, php-format
+msgid "Trackback %d"
+msgstr ""
+
+#: ../functions.php:554
+msgid "Comments are closed."
+msgstr ""
+
+#: ../functions.php:623
+#, php-format
+msgid "READ%sMORE"
+msgstr ""
+
+#: ../functions.php:633
+#, php-format
+msgid "READ%sPOST"
+msgstr ""
+
+#: ../functions.php:655 ../functions.php:1580
+#, php-format
+msgid "Search Results of \" %s \""
+msgstr ""
+
+#: ../functions.php:687 ../functions.php:1658
+#, php-format
+msgid "Page %d"
+msgstr ""
+
+#: ../functions.php:992
+#, php-format
+msgid "Chocolat theme by %1$sMignon Style%2$s."
+msgstr ""
+
+#: ../functions.php:992
+#, php-format
+msgid "Powered by %1$sWordPress%2$s."
+msgstr ""
+
+#: ../functions.php:1040
+#, php-format
+msgid "Copyright &copy; %1$s %2$s All Rights Reserved."
+msgstr ""
+
+#: ../functions.php:1149
+msgid "Last updated"
+msgstr ""
+
+#: ../functions.php:1168
+msgid "Attention"
+msgstr ""
+
+#: ../functions.php:1213
+msgid "No Comments"
+msgstr ""
+
+#: ../functions.php:1213
+msgid "1 Comment"
+msgstr ""
+
+#: ../functions.php:1213
+msgid "% Comments"
+msgstr ""
+
+#: ../functions.php:1213
+msgid "Comments Off"
+msgstr ""
+
+#: ../functions.php:1273 ../functions.php:1393 ../admin/theme-options.php:1197
+msgid "RSS"
+msgstr ""
+
+#: ../functions.php:1282 ../functions.php:1402
+msgid "Feedly"
+msgstr ""
+
+#: ../functions.php:1307 ../functions.php:1421 ../admin/theme-options.php:1160
+msgid "Contact"
+msgstr ""
+
+#: ../functions.php:1361 ../admin/theme-options.php:1148
+msgid "Information"
+msgstr ""
+
+#: ../functions.php:1616 ../functions.php:1619
+msgid "F"
+msgstr ""
+
+#: ../functions.php:1621
+msgid "j"
+msgstr ""
+
+#: ../functions.php:1730 ../functions.php:2044 ../functions.php:2069
+#: ../admin/theme-options.php:884
+msgid "New Entry"
+msgstr ""
+
+#: ../functions.php:1741 ../functions.php:2164 ../functions.php:2191
+#: ../admin/theme-options.php:837
+msgid "Related Entry"
+msgstr ""
+
+#: ../functions.php:2043 ../functions.php:2163 ../functions.php:2274
+#, php-format
+msgid "It is a widget for the %s theme."
+msgstr ""
+
+#: ../functions.php:2043
+msgid "The most recent posts on your site (with thumbnails)"
+msgstr ""
+
+#: ../functions.php:2044
+msgid "(with thumbnails)"
+msgstr ""
+
+#: ../functions.php:2140 ../functions.php:2254 ../functions.php:2331
+msgid "Title:"
+msgstr ""
+
+#: ../functions.php:2143 ../functions.php:2257
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../functions.php:2147 ../functions.php:2261
+msgid "Display post date?"
+msgstr ""
+
+#: ../functions.php:2150
+msgid "Do not want to display the top page of the Web site."
+msgstr ""
+
+#: ../functions.php:2163
+msgid "In the single page, and view the latest posts in the same category."
+msgstr ""
+
+#: ../functions.php:2274
+msgid "View navigation menu to a fixed page that have a parent-child page"
+msgstr ""
+
+#: ../functions.php:2275
+msgid "Fixed Page Menu"
+msgstr ""
+
+#: ../functions.php:2282
+msgid "Page Navi"
+msgstr ""
+
+#: ../functions.php:2333
+msgid "Sort by:"
+msgstr ""
+
+#: ../functions.php:2335
+msgid "Page title"
+msgstr ""
+
+#: ../functions.php:2336
+msgid "Page order"
+msgstr ""
+
+#: ../functions.php:2337
+msgid "Page ID"
+msgstr ""
+
+#: ../searchform.php:12 ../searchform.php:13 ../searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: ../admin/theme-options.php:17
+#, php-format
+msgid "%s Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:53 ../admin/inc/option-register.php:189
+msgid "Select Image"
+msgstr ""
+
+#: ../admin/theme-options.php:54
+msgid "Set up Image"
+msgstr ""
+
+#: ../admin/theme-options.php:239
+msgid "View a description of the Web site"
+msgstr ""
+
+#: ../admin/theme-options.php:243
+msgid "Show the name of the author of the posts"
+msgstr ""
+
+#: ../admin/theme-options.php:247
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: ../admin/theme-options.php:251
+msgid "Show the message when you have closed the comment"
+msgstr ""
+
+#: ../admin/theme-options.php:255
+msgid "Show the heading of number of posts in the archives page"
+msgstr ""
+
+#: ../admin/theme-options.php:259
+msgid "Add a link to the home page in the header image"
+msgstr ""
+
+#: ../admin/theme-options.php:263
+msgid "Shows the number of comments in the posts home page"
+msgstr ""
+
+#: ../admin/theme-options.php:267
+msgid "View Last updated post page"
+msgstr ""
+
+#: ../admin/theme-options.php:271
+msgid "Use the Lightbox to image"
+msgstr ""
+
+#: ../admin/theme-options.php:275
+msgid "Use the Lightbox to gallery"
+msgstr ""
+
+#: ../admin/theme-options.php:276
+msgid ""
+"When you use \"Tiled Galleries\" of jetpack plugin, clear the check box."
+msgstr ""
+
+#: ../admin/theme-options.php:280
+msgid "Show a Fluid Grid Layout widgets"
+msgstr ""
+
+#: ../admin/theme-options.php:297
+msgid "Favicon Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:298
+msgid "favicon"
+msgstr ""
+
+#: ../admin/theme-options.php:300
+msgid "favicon.ico (width 16px x height 16px)"
+msgstr ""
+
+#: ../admin/theme-options.php:305
+msgid "Icon Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:306
+msgid "smartphone icon"
+msgstr ""
+
+#: ../admin/theme-options.php:308
+msgid "apple-touch-icon.png (width 144px x height 144px)"
+msgstr ""
+
+#: ../admin/theme-options.php:313
+msgid "Logo Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:314
+msgid "logo"
+msgstr ""
+
+#: ../admin/theme-options.php:316
+msgid ".png, .jpg and .gif (max-width 350px)"
+msgstr ""
+
+#: ../admin/theme-options.php:321
+msgid "No Image Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:322
+msgid "image of \"No Image\""
+msgstr ""
+
+#: ../admin/theme-options.php:323
+msgid "If you have not set, use the \"No Image\" image of theme defaults."
+msgstr ""
+
+#: ../admin/theme-options.php:324
+msgid ".png, .jpg and .gif (width 300px x height 300px)"
+msgstr ""
+
+#: ../admin/theme-options.php:343
+msgid "Use e-mail address"
+msgstr ""
+
+#: ../admin/theme-options.php:348
+msgid "Use the contact page"
+msgstr ""
+
+#: ../admin/theme-options.php:365
+msgid "Descending order"
+msgstr ""
+
+#: ../admin/theme-options.php:369
+msgid "Ascending order"
+msgstr ""
+
+#: ../admin/theme-options.php:373
+msgid "Random"
+msgstr ""
+
+#: ../admin/theme-options.php:390
+msgid "Category"
+msgstr ""
+
+#: ../admin/theme-options.php:394
+msgid "Tag"
+msgstr ""
+
+#: ../admin/theme-options.php:436
+msgid "Top of the sidebar"
+msgstr ""
+
+#: ../admin/theme-options.php:440
+msgid "Bottom of the sidebar"
+msgstr ""
+
+#: ../admin/theme-options.php:458
+msgid "Use an excerpt"
+msgstr ""
+
+#: ../admin/theme-options.php:463
+msgid "Use the \"more\" quicktag"
+msgstr ""
+
+#: ../admin/theme-options.php:480
+msgid "Enable"
+msgstr ""
+
+#: ../admin/theme-options.php:484
+msgid "Disable"
+msgstr ""
+
+#: ../admin/theme-options.php:502
+msgid "Light Color"
+msgstr ""
+
+#: ../admin/theme-options.php:507
+msgid "Dark Color"
+msgstr ""
+
+#: ../admin/theme-options.php:524
+msgid "Slider Image 1"
+msgstr ""
+
+#: ../admin/theme-options.php:528
+msgid "Slider Image 2"
+msgstr ""
+
+#: ../admin/theme-options.php:532
+msgid "Slider Image 3"
+msgstr ""
+
+#: ../admin/theme-options.php:536
+msgid "Slider Image 4"
+msgstr ""
+
+#: ../admin/theme-options.php:540
+msgid "Slider Image 5"
+msgstr ""
+
+#: ../admin/theme-options.php:558 ../admin/theme-options.php:632
+msgid "Left"
+msgstr ""
+
+#: ../admin/theme-options.php:563 ../admin/theme-options.php:637
+#: ../admin/theme-options.php:665
+msgid "Center"
+msgstr ""
+
+#: ../admin/theme-options.php:568 ../admin/theme-options.php:642
+msgid "Right"
+msgstr ""
+
+#: ../admin/theme-options.php:586
+msgid "To Sneak"
+msgstr ""
+
+#: ../admin/theme-options.php:591
+msgid "Not Sneak"
+msgstr ""
+
+#: ../admin/theme-options.php:609
+msgid "Crop"
+msgstr ""
+
+#: ../admin/theme-options.php:614
+msgid "Resize"
+msgstr ""
+
+#: ../admin/theme-options.php:660
+msgid "Top"
+msgstr ""
+
+#: ../admin/theme-options.php:670
+msgid "Bottom"
+msgstr ""
+
+#: ../admin/theme-options.php:686 ../admin/theme-options.php:756
+msgid "Display Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:690
+msgid "Featured Image Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:694
+msgid "Links Setting"
+msgstr ""
+
+#: ../admin/theme-options.php:698 ../admin/theme-options.php:1277
+msgid "Slider Setting"
+msgstr ""
+
+#: ../admin/theme-options.php:702
+msgid "Custom CSS"
+msgstr ""
+
+#: ../admin/theme-options.php:734
+msgid "Settings saved."
+msgstr ""
+
+#: ../admin/theme-options.php:772
+msgid "Excerpt Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:774
+msgid "Set the display of posts of an archive page."
+msgstr ""
+
+#: ../admin/theme-options.php:774
+msgid "Please select from \"excerpt\" or \"more quick tag\"."
+msgstr ""
+
+#: ../admin/theme-options.php:786
+msgid "Number of characters to be displayed in the excerpt"
+msgstr ""
+
+#: ../admin/theme-options.php:786 ../admin/theme-options.php:803
+#: ../admin/theme-options.php:847 ../admin/theme-options.php:853
+#: ../admin/theme-options.php:869 ../admin/theme-options.php:874
+#: ../admin/theme-options.php:894 ../admin/theme-options.php:900
+#: ../admin/theme-options.php:943 ../admin/theme-options.php:951
+#: ../admin/theme-options.php:1022 ../admin/theme-options.php:1030
+#: ../admin/theme-options.php:1127 ../admin/theme-options.php:1130
+#: ../admin/theme-options.php:1178 ../admin/theme-options.php:1213
+#: ../admin/theme-options.php:1215 ../admin/theme-options.php:1305
+#: ../admin/theme-options.php:1312
+msgid ":"
+msgstr ""
+
+#: ../admin/theme-options.php:792
+msgid ""
+"In the Japanese version of WordPress, please activate WP Multibyte Patch "
+"plugin."
+msgstr ""
+
+#: ../admin/theme-options.php:799
+msgid "Display the \"more\" link"
+msgstr ""
+
+#: ../admin/theme-options.php:803
+msgid "Character of the \"more\" link"
+msgstr ""
+
+#: ../admin/theme-options.php:824
+#, php-format
+msgid "Once you have set the image, it is used as the %s for your Web site."
+msgstr ""
+
+#: ../admin/theme-options.php:824 ../admin/theme-options.php:1272
+#, php-format
+msgid "Recommended files %s"
+msgstr ""
+
+#: ../admin/theme-options.php:830
+msgid "Image Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:831 ../admin/inc/option-register.php:201
+msgid ""
+"Sorry, WordPress you are using is not supported. Upgrade your WordPress."
+msgstr ""
+
+#: ../admin/theme-options.php:839
+msgid ""
+"Displays a list of related articles, under the article of a single post page "
+"if you check."
+msgstr ""
+
+#: ../admin/theme-options.php:842
+msgid "View Related Posts after the content"
+msgstr ""
+
+#: ../admin/theme-options.php:847 ../admin/theme-options.php:894
+#: ../admin/theme-options.php:1127
+msgid "Title"
+msgstr ""
+
+#: ../admin/theme-options.php:853 ../admin/theme-options.php:900
+msgid "Number of posts to show"
+msgstr ""
+
+#: ../admin/theme-options.php:856 ../admin/theme-options.php:903
+msgid "posts"
+msgstr ""
+
+#: ../admin/theme-options.php:859 ../admin/theme-options.php:906
+msgid "x"
+msgstr ""
+
+#: ../admin/theme-options.php:864 ../admin/theme-options.php:911
+msgid "row"
+msgstr ""
+
+#: ../admin/theme-options.php:869
+msgid "Alignment sequence"
+msgstr ""
+
+#: ../admin/theme-options.php:874
+msgid "Classification"
+msgstr ""
+
+#: ../admin/theme-options.php:886
+msgid ""
+"Displays a list of new articles, under the article of a single post page if "
+"you check."
+msgstr ""
+
+#: ../admin/theme-options.php:889
+msgid "View New Posts after the content"
+msgstr ""
+
+#: ../admin/theme-options.php:921
+msgid "Sidebar Settings"
+msgstr ""
+
+#: ../admin/theme-options.php:933
+msgid "Set the size and the position of the featured image."
+msgstr ""
+
+#: ../admin/theme-options.php:938
+msgid "Featured image size"
+msgstr ""
+
+#: ../admin/theme-options.php:943 ../admin/theme-options.php:1022
+msgid "Width"
+msgstr ""
+
+#: ../admin/theme-options.php:946 ../admin/theme-options.php:954
+#: ../admin/theme-options.php:1025 ../admin/theme-options.php:1033
+msgid "px"
+msgstr ""
+
+#: ../admin/theme-options.php:951 ../admin/theme-options.php:1030
+msgid "Height"
+msgstr ""
+
+#: ../admin/theme-options.php:958 ../admin/theme-options.php:1037
+msgid "The default size of the featured image is width 700px, height 350px."
+msgstr ""
+
+#: ../admin/theme-options.php:958 ../admin/theme-options.php:1037
+msgid "Maximum width that can be used for featured image is 940px."
+msgstr ""
+
+#: ../admin/theme-options.php:963
+msgid "Featured image position"
+msgstr ""
+
+#: ../admin/theme-options.php:972
+msgid "Sneak settings"
+msgstr ""
+
+#: ../admin/theme-options.php:981
+msgid "Crop settings"
+msgstr ""
+
+#: ../admin/theme-options.php:983
+msgid "Make the crop setting of the featured image."
+msgstr ""
+
+#: ../admin/theme-options.php:983 ../admin/theme-options.php:1062
+msgid ""
+"The default is to crop in the center of the image to the size you have set."
+msgstr ""
+
+#: ../admin/theme-options.php:992
+msgid "Crop position"
+msgstr ""
+
+#: ../admin/theme-options.php:1006
+msgid "Featured image settings of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1008
+msgid ""
+"If you want to the featured image of home page and posts page to another "
+"setting, please put a check."
+msgstr ""
+
+#: ../admin/theme-options.php:1011
+msgid "Setting the featured image of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1017
+msgid "Featured image size of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1042
+msgid "Featured image position of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1051
+msgid "Sneak settings of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1060
+msgid "Crop settings of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1062
+msgid "Make the crop setting of the featured image of home page."
+msgstr ""
+
+#: ../admin/theme-options.php:1071
+msgid "Crop position of home page"
+msgstr ""
+
+#: ../admin/theme-options.php:1085
+msgid "Thumbnail crop settings"
+msgstr ""
+
+#: ../admin/theme-options.php:1087
+msgid "Make the crop position setting of the thumbnail."
+msgstr ""
+
+#: ../admin/theme-options.php:1087
+msgid "The default is to crop in the center of the image."
+msgstr ""
+
+#: ../admin/theme-options.php:1104
+msgid ""
+"Set the display of contact or RSS and copyright.Copyright will be displayed "
+"in the footer."
+msgstr ""
+
+#: ../admin/theme-options.php:1109 ../admin/theme-options.php:1213
+msgid "Position to display"
+msgstr ""
+
+#: ../admin/theme-options.php:1113
+msgid "Display in the header"
+msgstr ""
+
+#: ../admin/theme-options.php:1114
+msgid "In a smartphone, it is displayed at the position of the footer."
+msgstr ""
+
+#: ../admin/theme-options.php:1121
+msgid "Display in the sidebar"
+msgstr ""
+
+#: ../admin/theme-options.php:1130
+msgid "Display position"
+msgstr ""
+
+#: ../admin/theme-options.php:1140
+msgid "Display in the footer"
+msgstr ""
+
+#: ../admin/theme-options.php:1150
+msgid ""
+"When you fill in a profile or information, it will be displayed in the "
+"sidebar."
+msgstr ""
+
+#: ../admin/theme-options.php:1164
+msgid "View Contact"
+msgstr ""
+
+#: ../admin/theme-options.php:1176
+msgid ""
+"E-mail address that is registered with the general settings are used. Please "
+"enter if you want to use the e-mail address of the other."
+msgstr ""
+
+#: ../admin/theme-options.php:1178
+msgid "mailto"
+msgstr ""
+
+#: ../admin/theme-options.php:1183
+msgid "URL of the Contact Page"
+msgstr ""
+
+#: ../admin/theme-options.php:1200
+msgid "View RSS"
+msgstr ""
+
+#: ../admin/theme-options.php:1204
+msgid "View Feedly"
+msgstr ""
+
+#: ../admin/theme-options.php:1212
+msgid ""
+"To display the social links, use the \"Social Links\" of the custom menu."
+msgstr ""
+
+#: ../admin/theme-options.php:1213
+msgid ""
+"Displays in a position that is set in the \"Position to display\" of \"Links "
+"Setting\"."
+msgstr ""
+
+#: ../admin/theme-options.php:1215
+msgid "A corresponding social links"
+msgstr ""
+
+#: ../admin/theme-options.php:1216
+msgid "Twitter"
+msgstr ""
+
+#: ../admin/theme-options.php:1217
+msgid "Facebook"
+msgstr ""
+
+#: ../admin/theme-options.php:1218
+msgid "Google+"
+msgstr ""
+
+#: ../admin/theme-options.php:1219
+msgid "Tumblr"
+msgstr ""
+
+#: ../admin/theme-options.php:1220
+msgid "Pinterest"
+msgstr ""
+
+#: ../admin/theme-options.php:1221
+msgid "Instagram"
+msgstr ""
+
+#: ../admin/theme-options.php:1222
+msgid "LinkedIn"
+msgstr ""
+
+#: ../admin/theme-options.php:1223
+msgid "Flickr"
+msgstr ""
+
+#: ../admin/theme-options.php:1224
+msgid "Dribbble"
+msgstr ""
+
+#: ../admin/theme-options.php:1225
+msgid "YouTube"
+msgstr ""
+
+#: ../admin/theme-options.php:1226
+msgid "Vimeo"
+msgstr ""
+
+#: ../admin/theme-options.php:1227
+msgid "GitHub"
+msgstr ""
+
+#: ../admin/theme-options.php:1228
+msgid "Viadeo"
+msgstr ""
+
+#: ../admin/theme-options.php:1229
+msgid "Bloglovin"
+msgstr ""
+
+#: ../admin/theme-options.php:1230
+msgid "pixiv"
+msgstr ""
+
+#: ../admin/theme-options.php:1236
+msgid "Copyright"
+msgstr ""
+
+#: ../admin/theme-options.php:1240
+msgid "Display the copyright of Web site"
+msgstr ""
+
+#: ../admin/theme-options.php:1245
+msgid "It will be displayed."
+msgstr ""
+
+#: ../admin/theme-options.php:1245
+msgid "Please enter if you want to change the text of copyright."
+msgstr ""
+
+#: ../admin/theme-options.php:1256
+msgid "Credit link"
+msgstr ""
+
+#: ../admin/theme-options.php:1258
+msgid ""
+"Choose to enable or disable  the credit link of the author of the theme."
+msgstr ""
+
+#: ../admin/theme-options.php:1258
+msgid "If you display credit link, I am very pleased :)"
+msgstr ""
+
+#: ../admin/theme-options.php:1272
+msgid "Setting an image to be displayed the slider."
+msgstr ""
+
+#: ../admin/theme-options.php:1272
+msgid "Please use the image of the same size."
+msgstr ""
+
+#: ../admin/theme-options.php:1272
+msgid ".png and .jpg (width 980px)"
+msgstr ""
+
+#: ../admin/theme-options.php:1280
+msgid "Use the slider to the header image"
+msgstr ""
+
+#: ../admin/theme-options.php:1286
+msgid "The color of the slider"
+msgstr ""
+
+#: ../admin/theme-options.php:1305
+msgid "Caption"
+msgstr ""
+
+#: ../admin/theme-options.php:1312
+msgid "Link URL"
+msgstr ""
+
+#: ../admin/theme-options.php:1324
+msgid ""
+"Sorry, WordPress you are using is not supported. Upgrade your version of "
+"WordPress."
+msgstr ""
+
+#: ../admin/theme-options.php:1331
+msgid ""
+"The Custom CSS editor gives you can edit the theme, add or replace your "
+"theme's CSS."
+msgstr ""
+
+#: ../admin/theme-options.php:1331
+msgid "This gives syntax coloring, auto-indent feature comes with."
+msgstr ""
+
+#: ../admin/theme-options.php:1337
+msgid "Enter Your Custom CSS Here"
+msgstr ""
+
+#: ../admin/theme-options.php:1347
+msgid "Save the value of the option of Chocolat in the database"
+msgstr ""
+
+#: ../admin/theme-options.php:1348
+msgid ""
+"If you want to use the value of the option of Chocolat a child theme, please "
+"check the check box."
+msgstr ""
+
+#: ../admin/theme-options.php:1354
+msgid "Save Changes"
+msgstr ""
+
+#: ../admin/theme-options.php:1355
+msgid "Reset Defaults"
+msgstr ""
+
+#: ../admin/theme-options.php:1360
+msgid "If you can not \"Save changes\" or \"reset\":"
+msgstr ""
+
+#: ../admin/theme-options.php:1360
+msgid "More detailed"
+msgstr ""
+
+#: ../admin/theme-options.php:1360
+#: ../admin/inc/class-tgm-plugin-activation.php:186
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../admin/theme-options.php:1361
+msgid ""
+"When WAF setting of the server is enabled, you can not \"Save changes\" or "
+"\"reset\"."
+msgstr ""
+
+#: ../admin/theme-options.php:1361
+msgid ""
+"Please save the settings of Chocolat after you disable the WAF configuration."
+msgstr ""
+
+#: ../admin/theme-options.php:1361
+msgid ""
+"Once you have save the settings of Chocolat, for security, please reenable "
+"the WAF setting."
+msgstr ""
+
+#: ../admin/theme-options.php:1361
+msgid "Please contact the server administrator for more information."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:167
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:168
+msgid "Install Plugins"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:169
+#: ../admin/inc/tgm-plugin-installer.php:72
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:170
+msgid "Something went wrong."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:171
+#: ../admin/inc/tgm-plugin-installer.php:74
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:172
+#: ../admin/inc/tgm-plugin-installer.php:75
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:173
+#: ../admin/inc/tgm-plugin-installer.php:76
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:174
+#: ../admin/inc/tgm-plugin-installer.php:77
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:175
+#: ../admin/inc/tgm-plugin-installer.php:78
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:176
+#: ../admin/inc/tgm-plugin-installer.php:79
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:177
+#: ../admin/inc/tgm-plugin-installer.php:80
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:178
+#: ../admin/inc/tgm-plugin-installer.php:81
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:179
+#: ../admin/inc/tgm-plugin-installer.php:82
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:180
+#: ../admin/inc/tgm-plugin-installer.php:83
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:181
+#: ../admin/inc/tgm-plugin-installer.php:84
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:182
+msgid "Return to the dashboard"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:183
+#: ../admin/inc/class-tgm-plugin-activation.php:1947
+#: ../admin/inc/tgm-plugin-installer.php:85
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:184
+#: ../admin/inc/class-tgm-plugin-activation.php:1638
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:185
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:538
+#: ../admin/inc/class-tgm-plugin-activation.php:2164
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:724
+msgid "and"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1173
+msgid "Private Repository"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1176
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1181
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1184
+msgid "Required"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1184
+msgid "Recommended"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1187
+msgid "Not Installed"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1189
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1294
+#: ../admin/inc/class-tgm-plugin-activation.php:1402
+msgid "Install"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1316
+#: ../admin/inc/class-tgm-plugin-activation.php:1403
+msgid "Activate"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1365
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1381
+msgid "Plugin"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1382
+msgid "Source"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1383
+msgid "Type"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1384
+msgid "Status"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1930
+msgid "Install package not available."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1931
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1932
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1933
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1934
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1935
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:1946
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2060
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2061
+#: ../admin/inc/class-tgm-plugin-activation.php:2070
+msgid "Show Details"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2061
+#: ../admin/inc/class-tgm-plugin-activation.php:2070
+msgid "Hide Details"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2062
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2063
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2067
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2068
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2069
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2070
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2071
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../admin/inc/class-tgm-plugin-activation.php:2072
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../admin/inc/option-register.php:196
+msgid "Delete Image"
+msgstr ""
+
+#: ../admin/inc/tgm-plugin-installer.php:58
+msgid ""
+"\"MS Custom Login\" is the plugin to customize the login page of WordPress."
+msgstr ""
+
+#: ../admin/inc/tgm-plugin-installer.php:59
+msgid ""
+"This plugin includes a special edition that can the login page of the same "
+"design as WordPress Theme \"Chocolat\"."
+msgstr ""
+
+#: ../admin/inc/tgm-plugin-installer.php:70
+#: ../admin/inc/tgm-plugin-installer.php:71
+msgid "Recommend Plugins"
+msgstr ""
+
+#: ../admin/inc/tgm-plugin-installer.php:73
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../admin/inc/tgm-plugin-installer.php:86
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""

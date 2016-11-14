@@ -24,3 +24,7 @@
 
 	
 </section><!-- #post-## -->
+if ( ! is_attachment() ) {
+	
+		comments_template();
+	}

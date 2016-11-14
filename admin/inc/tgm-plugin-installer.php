@@ -1,10 +1,10 @@
 <?php
 /**
  * Register the required plugins for this theme.
- * @package   Chocolat
+ * @package   mishie
  * @copyright Copyright (c) 2014 Mignon Style
  * @license   GNU General Public License v2.0
- * @since     Chocolat 1.1.7
+ * @since     mishie 1.1.7
  */
 
 /**
@@ -55,8 +55,8 @@ function mishie_register_required_plugins() {
 	 * end of each line for what each argument will be.
 	 */
 
-	$message_strings = '<div class="wrap tgm-message"><p></p><p>'. esc_html__('"MS Custom Login" is the plugin to customize the login page of WordPress.', 'chocolat' ). '<br />';
-	$message_strings .= esc_html__('This plugin includes a special edition that can the login page of the same design as WordPress Theme "Chocolat".', 'chocolat' ).'</p><p></p></div>';
+	$message_strings = '<div class="wrap tgm-message"><p></p><p>'. esc_html__('"MS Custom Login" is the plugin to customize the login page of WordPress.', 'mishie' ). '<br />';
+	$message_strings .= esc_html__('This plugin includes a special edition that can the login page of the same design as WordPress Theme "mishie".', 'mishie' ).'</p><p></p></div>';
 
 	$config = array(
 		'default_path' => '',                      // Default absolute path to pre-packaged plugins.
@@ -67,23 +67,23 @@ function mishie_register_required_plugins() {
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => $message_strings,                      // Message to output right before the plugins table.
 		'strings'      => array(
-			'page_title'                      => __( 'Recommend Plugins', 'chocolat' ),
-			'menu_title'                      => __( 'Recommend Plugins', 'chocolat' ),
-			'installing'                      => __( 'Installing Plugin: %s', 'chocolat' ), // %s = plugin name.
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'chocolat' ),
-			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'chocolat' ), // %1$s = plugin name(s).
-			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'chocolat' ), // %1$s = plugin name(s).
-			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'chocolat' ),
-			'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'chocolat' ),
-			'return'                          => __( 'Return to Required Plugins Installer', 'chocolat' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'chocolat' ),
-			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'chocolat' ), // %s = dashboard link.
+			'page_title'                      => __( 'Recommend Plugins', 'mishie' ),
+			'menu_title'                      => __( 'Recommend Plugins', 'mishie' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'mishie' ), // %s = plugin name.
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'mishie' ),
+			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'mishie' ), // %1$s = plugin name(s).
+			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'mishie' ), // %1$s = plugin name(s).
+			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'mishie' ),
+			'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'mishie' ),
+			'return'                          => __( 'Return to Required Plugins Installer', 'mishie' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'mishie' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'mishie' ), // %s = dashboard link.
 			'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 		)
 	);

@@ -1,10 +1,10 @@
 <?php
 /**
  * Theme Options
- * @package   Chocolat
+ * @package   mishie
  * @copyright Copyright (c) 2014 Mignon Style
  * @license   GNU General Public License v2.0
- * @since     Chocolat 1.0
+ * @since     mishie 1.0
  */
 
 /**
@@ -14,7 +14,7 @@
  */
 
 function mishie_options_title() {
-	$options_title = sprintf( __( '%s Settings', 'chocolat' ), esc_attr( wp_get_theme() ) );
+	$options_title = sprintf( __( '%s Settings', 'mishie' ), esc_attr( wp_get_theme() ) );
 	return $options_title;
 }
 
@@ -28,10 +28,10 @@ function mishie_admin_enqueue_style( $hook ) {
 	if ( 'appearance_page_theme_options' != $hook ) {
 		return;
 	}
-	wp_enqueue_style( 'chocolat-themeoptions', get_template_directory_uri().'/admin/css/theme-options.css' );
+	wp_enqueue_style( 'mishie-themeoptions', get_template_directory_uri().'/admin/css/theme-options.css' );
 
 	// CodeMirror
-	wp_enqueue_style( 'chocolat-codemirror', get_template_directory_uri().'/admin/inc/codemirror/codemirror.css' );
+	wp_enqueue_style( 'mishie-codemirror', get_template_directory_uri().'/admin/inc/codemirror/codemirror.css' );
 }
 add_action( 'admin_enqueue_scripts', 'mishie_admin_enqueue_style' );
 
@@ -50,16 +50,16 @@ function mishie_admin_print_scripts() {
 		wp_enqueue_media();
 		wp_register_script( 'mishie_media-uploader_js', get_template_directory_uri().'/admin/js/media-uploader.js', array( 'jquery' ), null, true );
 		$translation_array = array(
-			'title'  => __( 'Select Image', 'chocolat' ),
-			'button' => __( 'Set up Image', 'chocolat' ),
+			'title'  => __( 'Select Image', 'mishie' ),
+			'button' => __( 'Set up Image', 'mishie' ),
 		);
 		wp_localize_script( 'mishie_media-uploader_js', 'mishie_media_text', $translation_array );
 		wp_enqueue_script( 'mishie_media-uploader_js' );
 	}
 
 	// CodeMirror
-	wp_enqueue_script( 'chocolat-codemirror-js', get_template_directory_uri().'/admin/inc/codemirror/codemirror.js', array(), null, true );
-	wp_enqueue_script( 'chocolat-codemirror-css-js', get_template_directory_uri().'/admin/inc/codemirror/css.js', array( 'chocolat-codemirror-js' ), null, true );
+	wp_enqueue_script( 'mishie-codemirror-js', get_template_directory_uri().'/admin/inc/codemirror/codemirror.js', array(), null, true );
+	wp_enqueue_script( 'mishie-codemirror-css-js', get_template_directory_uri().'/admin/inc/codemirror/css.js', array( 'mishie-codemirror-js' ), null, true );
 }
 
 /**
@@ -76,7 +76,7 @@ function mishie_theme_options_add_page() {
 	// Read the script only to theme options page
 	add_action( 'admin_print_scripts-'.$page_hook, 'mishie_admin_print_scripts' );
 }
-add_action( 'admin_menu', 'mishie_theme_options_add_page' );
+///add_action( 'admin_menu', 'mishie_theme_options_add_page' );
 
 /**
  * ------------------------------------------------------------
@@ -236,48 +236,48 @@ function mishie_settings_options() {
 	$settings_options = array(
 		'show_site_desc' => array(
 			'id'   => 'show_site_desc',
-			'text' => __( 'View a description of the Web site', 'chocolat' ),
+			'text' => __( 'View a description of the Web site', 'mishie' ),
 		),
 		'show_author' => array(
 			'id'   => 'show_author',
-			'text' => __( 'Show the name of the author of the posts', 'chocolat' ),
+			'text' => __( 'Show the name of the author of the posts', 'mishie' ),
 		),
 		'show_breadcrumb' => array(
 			'id'   => 'show_breadcrumb',
-			'text' => __( 'Show breadcrumbs', 'chocolat' ),
+			'text' => __( 'Show breadcrumbs', 'mishie' ),
 		),
 		'show_no_comment' => array(
 			'id'   => 'show_no_comment',
-			'text' => __( 'Show the message when you have closed the comment', 'chocolat' ),
+			'text' => __( 'Show the message when you have closed the comment', 'mishie' ),
 		),
 		'show_archives_posts' => array(
 			'id'   => 'show_archives_posts',
-			'text' => __( 'Show the heading of number of posts in the archives page', 'chocolat' ),
+			'text' => __( 'Show the heading of number of posts in the archives page', 'mishie' ),
 		),
 		'show_header_link' => array(
 			'id'   => 'show_header_link',
-			'text' => __( 'Add a link to the home page in the header image', 'chocolat' ),
+			'text' => __( 'Add a link to the home page in the header image', 'mishie' ),
 		),
 		'show_index_comments' => array(
 			'id'   => 'show_index_comments',
-			'text' => __( 'Shows the number of comments in the posts home page', 'chocolat' ),
+			'text' => __( 'Shows the number of comments in the posts home page', 'mishie' ),
 		),
 		'show_last_date' => array(
 			'id'   => 'show_last_date',
-			'text' => __( 'View Last updated post page', 'chocolat' ),
+			'text' => __( 'View Last updated post page', 'mishie' ),
 		),
 		'show_image_lightbox' => array(
 			'id'   => 'show_image_lightbox',
-			'text' => __( 'Use the Lightbox to image', 'chocolat' ),
+			'text' => __( 'Use the Lightbox to image', 'mishie' ),
 		),
 		'show_lightbox' => array(
 			'id'        => 'show_lightbox',
-			'text'      => __( 'Use the Lightbox to gallery', 'chocolat' ),
-			'text_desc' => __( 'When you use "Tiled Galleries" of jetpack plugin, clear the check box.', 'chocolat' ),
+			'text'      => __( 'Use the Lightbox to gallery', 'mishie' ),
+			'text_desc' => __( 'When you use "Tiled Galleries" of jetpack plugin, clear the check box.', 'mishie' ),
 		),
 		'show_widget_masonry' => array(
 			'id'   => 'show_widget_masonry',
-			'text' => __( 'Show a Fluid Grid Layout widgets', 'chocolat' ),
+			'text' => __( 'Show a Fluid Grid Layout widgets', 'mishie' ),
 		),
 	);
 	return $settings_options;
@@ -294,34 +294,34 @@ function mishie_upload_image_options() {
 	$upload_image_options = array(
 		'favicon' => array(
 			'id'    => 'favicon',
-			'title' => __( 'Favicon Settings', 'chocolat' ),
-			'text'  => __( 'favicon', 'chocolat' ),
+			'title' => __( 'Favicon Settings', 'mishie' ),
+			'text'  => __( 'favicon', 'mishie' ),
 			'desc'  => '',
-			'size'  => __( 'favicon.ico (width 16px x height 16px)', 'chocolat' ),
+			'size'  => __( 'favicon.ico (width 16px x height 16px)', 'mishie' ),
 			'name'  => 'favicon_url',
 		),
 		'sp_icon' => array(
 			'id'    => 'sp-icon',
-			'title' => __( 'Icon Settings', 'chocolat' ),
-			'text'  => __( 'smartphone icon', 'chocolat' ),
+			'title' => __( 'Icon Settings', 'mishie' ),
+			'text'  => __( 'smartphone icon', 'mishie' ),
 			'desc'  => '',
-			'size'  => __( 'apple-touch-icon.png (width 144px x height 144px)', 'chocolat' ),
+			'size'  => __( 'apple-touch-icon.png (width 144px x height 144px)', 'mishie' ),
 			'name'  => 'sp_icon_url',
 		),
 		'site_logo_url' => array(
 			'id'    => 'site-logo',
-			'title' => __( 'Logo Settings', 'chocolat' ),
-			'text'  => __( 'logo', 'chocolat' ),
+			'title' => __( 'Logo Settings', 'mishie' ),
+			'text'  => __( 'logo', 'mishie' ),
 			'desc'  => '',
-			'size'  => __( '.png, .jpg and .gif (max-width 350px)', 'chocolat' ),
+			'size'  => __( '.png, .jpg and .gif (max-width 350px)', 'mishie' ),
 			'name'  => 'site_logo_url',
 		),
 		'no_image_url' => array(
 			'id'    => 'no-image',
-			'title' => __( 'No Image Settings', 'chocolat' ),
-			'text'  => __( 'image of "No Image"', 'chocolat' ),
-			'desc'  => '<span class="description">'.__( 'If you have not set, use the "No Image" image of theme defaults.', 'chocolat' ).'</span>',
-			'size'  => __( '.png, .jpg and .gif (width 300px x height 300px)', 'chocolat' ),
+			'title' => __( 'No Image Settings', 'mishie' ),
+			'text'  => __( 'image of "No Image"', 'mishie' ),
+			'desc'  => '<span class="description">'.__( 'If you have not set, use the "No Image" image of theme defaults.', 'mishie' ).'</span>',
+			'size'  => __( '.png, .jpg and .gif (width 300px x height 300px)', 'mishie' ),
 			'name'  => 'no_image_url',
 		),
 	);
@@ -340,12 +340,12 @@ function mishie_contact_options() {
 		'contact_mail' => array(
 			'value' => 'contact_mail',
 			'id'    => 'mail',
-			'label' => __( 'Use e-mail address', 'chocolat' ),
+			'label' => __( 'Use e-mail address', 'mishie' ),
 		),
 		'contact_page' => array(
 			'value' => 'contact_page',
 			'id'    => 'page',
-			'label' => __( 'Use the contact page', 'chocolat' ),
+			'label' => __( 'Use the contact page', 'mishie' ),
 		),
 	);
 	return $contact_options;
@@ -362,15 +362,15 @@ function mishie_related_order_options() {
 	$related_order_options = array(
 		'desc' => array(
 			'value' => 'desc',
-			'label' => __( 'Descending order', 'chocolat' ),
+			'label' => __( 'Descending order', 'mishie' ),
 		),
 		'asc' => array(
 			'value' => 'asc',
-			'label' => __( 'Ascending order', 'chocolat' ),
+			'label' => __( 'Ascending order', 'mishie' ),
 		),
 		'random' => array(
 			'value' => 'random',
-			'label' => __( 'Random', 'chocolat' ),
+			'label' => __( 'Random', 'mishie' ),
 		),
 	);
 	return $related_order_options;
@@ -387,11 +387,11 @@ function mishie_related_class_options() {
 	$related_class_options = array(
 		'category' => array(
 			'value' => 'category',
-			'label' => __( 'Category', 'chocolat' ),
+			'label' => __( 'Category', 'mishie' ),
 		),
 		'tag' => array(
 			'value' => 'tag',
-			'label' => __( 'Tag', 'chocolat' ),
+			'label' => __( 'Tag', 'mishie' ),
 		),
 	);
 	return $related_class_options;
@@ -433,11 +433,11 @@ function mishie_links_side_options() {
 	$links_side_options = array(
 		'links_side_top' => array(
 			'value' => 'links_side_top',
-			'label' => __( 'Top of the sidebar', 'chocolat' ),
+			'label' => __( 'Top of the sidebar', 'mishie' ),
 		),
 		'links_side_bottom' => array(
 			'value' => 'links_side_bottom',
-			'label' => __( 'Bottom of the sidebar', 'chocolat' ),
+			'label' => __( 'Bottom of the sidebar', 'mishie' ),
 		),
 	);
 	return $links_side_options;
@@ -455,12 +455,12 @@ function mishie_read_more_options() {
 		'more_excerpt' => array(
 			'value' => 'more_excerpt',
 			'id'    => 'excerpt',
-			'label' => __( 'Use an excerpt', 'chocolat' ),
+			'label' => __( 'Use an excerpt', 'mishie' ),
 		),
 		'more_quicktag' => array(
 			'value' => 'more_quicktag',
 			'id'    => 'moretag',
-			'label' => __( 'Use the "more" quicktag', 'chocolat' ),
+			'label' => __( 'Use the "more" quicktag', 'mishie' ),
 		),
 	);
 	return $read_more_options;
@@ -477,11 +477,11 @@ function mishie_credit_link_options() {
 	$credit_link_options = array(
 		'credit_enable' => array(
 			'value' => 'credit_enable',
-			'label' => __( 'Enable', 'chocolat' ),
+			'label' => __( 'Enable', 'mishie' ),
 		),
 		'credit_disable' => array(
 			'value' => 'credit_disable',
-			'label' => __( 'Disable', 'chocolat' ),
+			'label' => __( 'Disable', 'mishie' ),
 		),
 	);
 	return $credit_link_options;
@@ -499,12 +499,12 @@ function mishie_slider_color_options() {
 		'slider_light' => array(
 			'value'   => 'slider_light',
 			'img'     => 'slider-light.png',
-			'label_2' => __( 'Light Color', 'chocolat' ),
+			'label_2' => __( 'Light Color', 'mishie' ),
 		),
 		'slider_dark' => array(
 			'value'   => 'slider_dark',
 			'img'     => 'slider-dark.png',
-			'label_2' => __( 'Dark Color', 'chocolat' ),
+			'label_2' => __( 'Dark Color', 'mishie' ),
 		),
 	);
 	return $slider_color_options;
@@ -521,23 +521,23 @@ function mishie_upload_slider_image_options() {
 	$upload_slider_image_options = array(
 		'slider_image01' => array(
 			'id'    => 'slider_image01',
-			'title' => __( 'Slider Image 1', 'chocolat' ),
+			'title' => __( 'Slider Image 1', 'mishie' ),
 		),
 		'slider_image02' => array(
 			'id'    => 'slider_image02',
-			'title' => __( 'Slider Image 2', 'chocolat' ),
+			'title' => __( 'Slider Image 2', 'mishie' ),
 		),
 		'slider_image03' => array(
 			'id'    => 'slider_image03',
-			'title' => __( 'Slider Image 3', 'chocolat' ),
+			'title' => __( 'Slider Image 3', 'mishie' ),
 		),
 		'slider_image04' => array(
 			'id'    => 'slider_image04',
-			'title' => __( 'Slider Image 4', 'chocolat' ),
+			'title' => __( 'Slider Image 4', 'mishie' ),
 		),
 		'slider_image05' => array(
 			'id'    => 'slider_image05',
-			'title' => __( 'Slider Image 5', 'chocolat' ),
+			'title' => __( 'Slider Image 5', 'mishie' ),
 		),
 	);
 	return $upload_slider_image_options;
@@ -555,17 +555,17 @@ function mishie_featured_position_options() {
 		'left' => array(
 			'value'   => 'left',
 			'img'     => 'featured_pos_left.png',
-			'label_2' => __( 'Left', 'chocolat' ),
+			'label_2' => __( 'Left', 'mishie' ),
 		),
 		'center' => array(
 			'value'   => 'center',
 			'img'     => 'featured_pos_center.png',
-			'label_2' => __( 'Center', 'chocolat' ),
+			'label_2' => __( 'Center', 'mishie' ),
 		),
 		'right' => array(
 			'value'   => 'right',
 			'img'     => 'featured_pos_right.png',
-			'label_2' => __( 'Right', 'chocolat' ),
+			'label_2' => __( 'Right', 'mishie' ),
 		),
 	);
 	return $options_array;
@@ -583,12 +583,12 @@ function mishie_featured_sneak_options() {
 		'sneak' => array(
 			'value'   => 'sneak',
 			'img'     => 'featured_sneak.png',
-			'label_2' => __( 'To Sneak', 'chocolat' ),
+			'label_2' => __( 'To Sneak', 'mishie' ),
 		),
 		'no_sneak' => array(
 			'value'   => 'no_sneak',
 			'img'     => 'featured_pos_left.png',
-			'label_2' => __( 'Not Sneak', 'chocolat' ),
+			'label_2' => __( 'Not Sneak', 'mishie' ),
 		),
 	);
 	return $options_array;
@@ -606,12 +606,12 @@ function mishie_featured_crop_options() {
 		'crop' => array(
 			'value'   => 'crop',
 			'img'     => 'featured_x_center.png',
-			'label_2' => __( 'Crop', 'chocolat' ),
+			'label_2' => __( 'Crop', 'mishie' ),
 		),
 		'resize' => array(
 			'value'   => 'resize',
 			'img'     => 'featured_resize.png',
-			'label_2' => __( 'Resize', 'chocolat' ),
+			'label_2' => __( 'Resize', 'mishie' ),
 		),
 	);
 	return $options_array;
@@ -629,17 +629,17 @@ function mishie_position_x_options() {
 		'left' => array(
 			'value'   => 'left',
 			'img'     => 'featured_x_left.png',
-			'label_2' => __( 'Left', 'chocolat' ),
+			'label_2' => __( 'Left', 'mishie' ),
 		),
 		'center' => array(
 			'value'   => 'center',
 			'img'     => 'featured_x_center.png',
-			'label_2' => __( 'Center', 'chocolat' ),
+			'label_2' => __( 'Center', 'mishie' ),
 		),
 		'right' => array(
 			'value'   => 'right',
 			'img'     => 'featured_x_right.png',
-			'label_2' => __( 'Right', 'chocolat' ),
+			'label_2' => __( 'Right', 'mishie' ),
 		),
 	);
 	return $options_array;
@@ -657,17 +657,17 @@ function mishie_position_y_options() {
 		'top' => array(
 			'value'   => 'top',
 			'img'     => 'featured_y_top.png',
-			'label_2' => __( 'Top', 'chocolat' ),
+			'label_2' => __( 'Top', 'mishie' ),
 		),
 		'center' => array(
 			'value'   => 'center',
 			'img'     => 'featured_y_center.png',
-			'label_2' => __( 'Center', 'chocolat' ),
+			'label_2' => __( 'Center', 'mishie' ),
 		),
 		'bottom' => array(
 			'value'   => 'bottom',
 			'img'     => 'featured_y_bottom.png',
-			'label_2' => __( 'Bottom', 'chocolat' ),
+			'label_2' => __( 'Bottom', 'mishie' ),
 		),
 	);
 	return $options_array;
@@ -683,23 +683,23 @@ function mishie_tab_title() {
 	$tab_title = array(
 		'settings' => array(
 			'id'    => 'settings',
-			'title' => __( 'Display Settings', 'chocolat' ),
+			'title' => __( 'Display Settings', 'mishie' ),
 		),
 		'featured' => array(
 			'id'    => 'featured',
-			'title' => __( 'Featured Image Settings', 'chocolat' ),
+			'title' => __( 'Featured Image Settings', 'mishie' ),
 		),
 		'links' => array(
 			'id'    => 'links',
-			'title' => __( 'Links Setting', 'chocolat' ),
+			'title' => __( 'Links Setting', 'mishie' ),
 		),
 		'slider' => array(
 			'id'    => 'slider',
-			'title' => __( 'Slider Setting', 'chocolat' ),
+			'title' => __( 'Slider Setting', 'mishie' ),
 		),
 		'css' => array(
 			'id'    => 'css',
-			'title' => __( 'Custom CSS', 'chocolat' ),
+			'title' => __( 'Custom CSS', 'mishie' ),
 		),
 	);
 	return $tab_title;
@@ -712,6 +712,7 @@ function mishie_tab_title() {
  */
 
 function mishie_get_option() {
+	
 	return get_option( 'mishie_theme_options', mishie_theme_default_options() );
 }
 
@@ -723,6 +724,8 @@ function mishie_get_option() {
 
 function mishie_theme_options_do_page() {
 	$options_title = mishie_options_title();
+	
+	
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -731,7 +734,7 @@ function mishie_theme_options_do_page() {
 		<h2><?php echo $options_title; ?></h2>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Settings saved.', 'chocolat' ); ?></strong></p></div>
+		<div class="updated fade"><p><strong><?php _e( 'Settings saved.', 'mishie' ); ?></strong></p></div>
 		<?php endif; ?>
 
 		<form method="post" action="options.php" enctype="multipart/form-data">
@@ -753,7 +756,7 @@ function mishie_theme_options_do_page() {
 					<table class="form-table">
 						<!-- Display Settings -->
 						<tr>
-							<th scope="row"><?php _e( 'Display Settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Display Settings', 'mishie' ); ?></th>
 							<td><fieldset>
 							<?php if ( is_array( mishie_settings_options() ) ) {
 								foreach ( mishie_settings_options() as $option ) {
@@ -769,9 +772,9 @@ function mishie_theme_options_do_page() {
 
 						<!-- Excerpt or Read More -->
 						<tr id="option-readmore">
-							<th scope="row"><?php _e( 'Excerpt Settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Excerpt Settings', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Set the display of posts of an archive page.', 'chocolat' ); ?><br /><?php _e( 'Please select from "excerpt" or "more quick tag".', 'chocolat' ); ?></p>
+								<p><?php _e( 'Set the display of posts of an archive page.', 'mishie' ); ?><br /><?php _e( 'Please select from "excerpt" or "more quick tag".', 'mishie' ); ?></p>
 								<?php if ( is_array( mishie_read_more_options() ) ) :
 									foreach ( mishie_read_more_options() as $option ) : ?>
 									<p><?php
@@ -783,24 +786,24 @@ function mishie_theme_options_do_page() {
 									<?php if ( $option['id'] == 'excerpt' ) : ?>
 									<div><?php
 										$option_name = 'excerpt_number';
-										$option_label = __( 'Number of characters to be displayed in the excerpt', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Number of characters to be displayed in the excerpt', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_type = 'number';
 										$option_class = 'small-text';
 										mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class );
 
 										if ( get_bloginfo( 'language' ) == 'ja' ) : ?>
-											<p class="description"><?php _e( 'In the Japanese version of WordPress, please activate WP Multibyte Patch plugin.', 'chocolat' ); ?></p>
+											<p class="description"><?php _e( 'In the Japanese version of WordPress, please activate WP Multibyte Patch plugin.', 'mishie' ); ?></p>
 										<?php endif; ?><br />
 									</div>
 
 									<?php elseif ( $option['id'] == 'moretag' ) : ?>
 									<div><?php
 										$option_name = 'show_more_link';
-										$option_text = __( 'Display the "more" link', 'chocolat' );
+										$option_text = __( 'Display the "more" link', 'mishie' );
 										mishie_checkbox( $options, $option_name, $option_text );
 
 										$option_name = 'moretag_text';
-										$option_label = __( 'Character of the "more" link', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Character of the "more" link', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										mishie_textfield( $options, $option_name, $option_label );
 									?></div>
 									<?php endif; ?>
@@ -821,57 +824,57 @@ function mishie_theme_options_do_page() {
 						?><tr>
 							<th scope="row"><?php echo $option['title']; ?></th>
 							<td><fieldset>
-								<p><?php printf( __( 'Once you have set the image, it is used as the %s for your Web site.', 'chocolat' ), $option['text'] ); ?><br /><span class="description"><?php printf( __( 'Recommended files %s', 'chocolat' ), $option['size'] ); ?></span><?php echo $option_text; ?></p>
+								<p><?php printf( __( 'Once you have set the image, it is used as the %s for your Web site.', 'mishie' ), $option['text'] ); ?><br /><span class="description"><?php printf( __( 'Recommended files %s', 'mishie' ), $option['size'] ); ?></span><?php echo $option_text; ?></p>
 								<?php mishie_media_uploader( $options, $option_id, $option_name ); ?>
 							</fieldset></td>
 						</tr><?php endforeach; endif;
 						else : ?>
 						<tr>
-							<th scope="row"><?php _e( 'Image Settings', 'chocolat' ); ?></th>
-							<td><p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your WordPress.', 'chocolat' ); ?></p></td>
+							<th scope="row"><?php _e( 'Image Settings', 'mishie' ); ?></th>
+							<td><p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your WordPress.', 'mishie' ); ?></p></td>
 						</tr>
 						<?php endif; ?>
 
 						<!-- Related Posts -->
 						<tr id="option-related-posts" class="option-check">
-							<th scope="row"><?php _e( 'Related Entry', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Related Entry', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Displays a list of related articles, under the article of a single post page if you check.', 'chocolat' ); ?></p>
+								<p><?php _e( 'Displays a list of related articles, under the article of a single post page if you check.', 'mishie' ); ?></p>
 								<?php
 									$option_name = 'show_related';
-									$option_text = __( 'View Related Posts after the content', 'chocolat' );
+									$option_text = __( 'View Related Posts after the content', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text );
 								?>
 								<div class="theme-left-space hidebox"><?php
 									$option_name = 'related_title';
-									$option_label = __( 'Title', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Title', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									mishie_textfield( $options, $option_name, $option_label );
 
 									echo '<table><tr><td>';
 
 									$option_name = 'related_number';
-									$option_label = __( 'Number of posts to show', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Number of posts to show', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									$option_type = 'number';
 									$option_class = 'small-text';
-									$label_after = __( 'posts', 'chocolat' );
+									$label_after = __( 'posts', 'mishie' );
 									mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 
-									echo '</td><td>' . __( 'x', 'chocolat' ) . '</td><td>';
+									echo '</td><td>' . __( 'x', 'mishie' ) . '</td><td>';
 
 									$option_name = 'related_row';
 									$option_type = 'number';
 									$option_class = 'small-text';
-									$label_after = __( 'row', 'chocolat' );
+									$label_after = __( 'row', 'mishie' );
 									mishie_textfield( $options, $option_name, '', $option_type, $option_class, $label_after );
 
 									echo '</td></tr></table>';
 
-									$option_label = __( 'Alignment sequence', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Alignment sequence', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									$option_array = mishie_related_order_options();
 									$option_name = 'related_order_select';
 									mishie_select( $options, $option_array, $option_name, $option_label );
 
-									$option_label = __( 'Classification', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Classification', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									$option_array = mishie_related_class_options();
 									$option_name = 'related_class_select';
 									mishie_select( $options, $option_array, $option_name, $option_label );
@@ -881,34 +884,34 @@ function mishie_theme_options_do_page() {
 
 						<!-- New Posts -->
 						<tr id="option-new-posts" class="option-check">
-							<th scope="row"><?php _e( 'New Entry', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'New Entry', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Displays a list of new articles, under the article of a single post page if you check.', 'chocolat' ); ?></p>
+								<p><?php _e( 'Displays a list of new articles, under the article of a single post page if you check.', 'mishie' ); ?></p>
 								<?php
 									$option_name = 'show_new_posts';
-									$option_text = __( 'View New Posts after the content', 'chocolat' );
+									$option_text = __( 'View New Posts after the content', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text );
 								?>
 								<div class="theme-left-space hidebox"><?php
 									$option_name = 'new_posts_title';
-									$option_label = __( 'Title', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Title', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									mishie_textfield( $options, $option_name, $option_label );
 
 									echo '<table><tr><td>';
 
 									$option_name = 'new_posts_number';
-									$option_label = __( 'Number of posts to show', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+									$option_label = __( 'Number of posts to show', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 									$option_type = 'number';
 									$option_class = 'small-text';
-									$label_after = __( 'posts', 'chocolat' );
+									$label_after = __( 'posts', 'mishie' );
 									mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 
-									echo '</td><td>' . __( 'x', 'chocolat' ) . '</td><td>';
+									echo '</td><td>' . __( 'x', 'mishie' ) . '</td><td>';
 
 									$option_name = 'new_posts_row';
 									$option_type = 'number';
 									$option_class = 'small-text';
-									$label_after = __( 'row', 'chocolat' );
+									$label_after = __( 'row', 'mishie' );
 									mishie_textfield( $options, $option_name, '', $option_type, $option_class, $label_after );
 
 									echo '</td></tr></table>';
@@ -918,7 +921,7 @@ function mishie_theme_options_do_page() {
 
 						<!-- Sidebar settings -->
 						<tr id="option-sidebar">
-							<th scope="row"><?php _e( 'Sidebar Settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Sidebar Settings', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_sidebar_options();
 								$option_name = 'sidebar_radio';
@@ -930,37 +933,37 @@ function mishie_theme_options_do_page() {
 
 				<div id="panel-featured" class="panel">
 					<h3 class="title"><?php echo $tab_title['featured']['title']; ?></h3>
-					<p class="panel-caption"><?php _e( 'Set the size and the position of the featured image.', 'chocolat' ); ?></p>
+					<p class="panel-caption"><?php _e( 'Set the size and the position of the featured image.', 'mishie' ); ?></p>
 
 					<table class="form-table">
 						<!-- Featured Image Settings -->
 						<tr>
-							<th scope="row"><?php _e( 'Featured image size', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Featured image size', 'mishie' ); ?></th>
 							<td><fieldset>
 								<table class="nest"><tr>
 									<td><?php
 										$option_name = 'featured_size_w';
-										$option_label = __( 'Width', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Width', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_type = 'number';
 										$option_class = 'small-text';
-										$label_after = __( 'px', 'chocolat' );
+										$label_after = __( 'px', 'mishie' );
 										mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 									?></td>
 									<td><?php
 										$option_name = 'featured_size_h';
-										$option_label = __( 'Height', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Height', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_type = 'number';
 										$option_class = 'small-text';
-										$label_after = __( 'px', 'chocolat' );
+										$label_after = __( 'px', 'mishie' );
 										mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 									?></td>
 								</tr></table>
-								<p class="description"><?php _e( 'The default size of the featured image is width 700px, height 350px.', 'chocolat' ); ?><br /><?php _e( 'Maximum width that can be used for featured image is 940px.', 'chocolat' ); ?></p>
+								<p class="description"><?php _e( 'The default size of the featured image is width 700px, height 350px.', 'mishie' ); ?><br /><?php _e( 'Maximum width that can be used for featured image is 940px.', 'mishie' ); ?></p>
 							</fieldset></td>
 						</tr>
 
 						<tr id="featured-position">
-							<th scope="row"><?php _e( 'Featured image position', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Featured image position', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_featured_position_options();
 								$option_name = 'featured_position';
@@ -969,7 +972,7 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-sneak">
-							<th scope="row"><?php _e( 'Sneak settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Sneak settings', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_featured_sneak_options();
 								$option_name = 'featured_sneak';
@@ -978,9 +981,9 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-crop">
-							<th scope="row"><?php _e( 'Crop settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Crop settings', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Make the crop setting of the featured image.', 'chocolat' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image to the size you have set.', 'chocolat' ); ?></span></p>
+								<p><?php _e( 'Make the crop setting of the featured image.', 'mishie' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image to the size you have set.', 'mishie' ); ?></span></p>
 							<?php
 								$option_array = mishie_featured_crop_options();
 								$option_name = 'featured_crop';
@@ -989,7 +992,7 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-crop-pos">
-							<th scope="row"><?php _e( 'Crop position', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Crop position', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_position_x_options();
 								$option_name = 'featured_crop_x';
@@ -1003,43 +1006,43 @@ function mishie_theme_options_do_page() {
 
 						<!-- Home Page Featured Image Settings -->
 						<tr id="featured-home" class="option-check">
-							<th scope="row"><?php _e( 'Featured image settings of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Featured image settings of home page', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'If you want to the featured image of home page and posts page to another setting, please put a check.', 'chocolat' ); ?></p>
+								<p><?php _e( 'If you want to the featured image of home page and posts page to another setting, please put a check.', 'mishie' ); ?></p>
 							<?php
 								$option_name = 'show_featured_home';
-								$option_text = __( 'Setting the featured image of home page', 'chocolat' );
+								$option_text = __( 'Setting the featured image of home page', 'mishie' );
 								mishie_checkbox( $options, $option_name, $option_text );
 							?></fieldset></td>
 						</tr>
 
 						<tr class="featured-home-children">
-							<th scope="row"><?php _e( 'Featured image size of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Featured image size of home page', 'mishie' ); ?></th>
 							<td><fieldset>
 								<table class="nest"><tr>
 									<td><?php
 										$option_name = 'featured_home_size_w';
-										$option_label = __( 'Width', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Width', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_type = 'number';
 										$option_class = 'small-text';
-										$label_after = __( 'px', 'chocolat' );
+										$label_after = __( 'px', 'mishie' );
 										mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 									?></td>
 									<td><?php
 										$option_name = 'featured_home_size_h';
-										$option_label = __( 'Height', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Height', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_type = 'number';
 										$option_class = 'small-text';
-										$label_after = __( 'px', 'chocolat' );
+										$label_after = __( 'px', 'mishie' );
 										mishie_textfield( $options, $option_name, $option_label, $option_type, $option_class, $label_after );
 									?></td>
 								</tr></table>
-								<p class="description"><?php _e( 'The default size of the featured image is width 700px, height 350px.', 'chocolat' ); ?><br /><?php _e( 'Maximum width that can be used for featured image is 940px.', 'chocolat' ); ?></p>
+								<p class="description"><?php _e( 'The default size of the featured image is width 700px, height 350px.', 'mishie' ); ?><br /><?php _e( 'Maximum width that can be used for featured image is 940px.', 'mishie' ); ?></p>
 							</fieldset></td>
 						</tr>
 
 						<tr id="featured-home-position" class="featured-home-children">
-							<th scope="row"><?php _e( 'Featured image position of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Featured image position of home page', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_featured_position_options();
 								$option_name = 'featured_home_position';
@@ -1048,7 +1051,7 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-home-sneak" class="featured-home-children">
-							<th scope="row"><?php _e( 'Sneak settings of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Sneak settings of home page', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_featured_sneak_options();
 								$option_name = 'featured_home_sneak';
@@ -1057,9 +1060,9 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-home-crop" class="featured-home-children">
-							<th scope="row"><?php _e( 'Crop settings of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Crop settings of home page', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Make the crop setting of the featured image of home page.', 'chocolat' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image to the size you have set.', 'chocolat' ); ?></span></p>
+								<p><?php _e( 'Make the crop setting of the featured image of home page.', 'mishie' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image to the size you have set.', 'mishie' ); ?></span></p>
 							<?php
 								$option_array = mishie_featured_crop_options();
 								$option_name = 'featured_home_crop';
@@ -1068,7 +1071,7 @@ function mishie_theme_options_do_page() {
 						</tr>
 
 						<tr id="featured-home-crop-pos" class="featured-home-children">
-							<th scope="row"><?php _e( 'Crop position of home page', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Crop position of home page', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_array = mishie_position_x_options();
 								$option_name = 'featured_home_crop_x';
@@ -1082,9 +1085,9 @@ function mishie_theme_options_do_page() {
 
 						<!-- Thumbnail Settings -->
 						<tr>
-							<th scope="row"><?php _e( 'Thumbnail crop settings', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Thumbnail crop settings', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Make the crop position setting of the thumbnail.', 'chocolat' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image.', 'chocolat' ); ?></span></p>
+								<p><?php _e( 'Make the crop position setting of the thumbnail.', 'mishie' ); ?><br /><span class="description"><?php _e( 'The default is to crop in the center of the image.', 'mishie' ); ?></span></p>
 								<?php
 									$option_array = mishie_position_x_options();
 									$option_name = 'thumbnail_crop_x';
@@ -1101,33 +1104,33 @@ function mishie_theme_options_do_page() {
 
 				<div id="panel-links" class="panel">
 					<h3 class="title"><?php echo $tab_title['links']['title']; ?></h3>
-					<p class="panel-caption"><?php _e( 'Set the display of contact or RSS and copyright.Copyright will be displayed in the footer.', 'chocolat' ); ?></p>
+					<p class="panel-caption"><?php _e( 'Set the display of contact or RSS and copyright.Copyright will be displayed in the footer.', 'mishie' ); ?></p>
 
 					<table class="form-table">
 						<!-- Position to display -->
 						<tr>
-							<th scope="row"><?php _e( 'Position to display', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Position to display', 'mishie' ); ?></th>
 							<td><fieldset>
 								<?php
 									$option_name = 'show_links_top';
-									$option_text = __( 'Display in the header', 'chocolat' );
-									$text_desc   = __( 'In a smartphone, it is displayed at the position of the footer.', 'chocolat' );
+									$option_text = __( 'Display in the header', 'mishie' );
+									$text_desc   = __( 'In a smartphone, it is displayed at the position of the footer.', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text, $text_desc );
 								?><br />
 
 								<div id="option-links-sidebar" class="option-check">
 									<?php
 										$option_name = 'show_links_side';
-										$option_text = __( 'Display in the sidebar', 'chocolat' );
+										$option_text = __( 'Display in the sidebar', 'mishie' );
 										mishie_checkbox( $options, $option_name, $option_text );
 									?>
 
 									<div class="theme-left-space hidebox"><?php
 										$option_name = 'links_side_title';
-										$option_label = __( 'Title', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Title', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										mishie_textfield( $options, $option_name, $option_label );
 
-										$option_label = __( 'Display position', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+										$option_label = __( 'Display position', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 										$option_array = mishie_links_side_options();
 										$option_name = 'links_side_select';
 										mishie_select( $options, $option_array, $option_name, $option_label );
@@ -1137,7 +1140,7 @@ function mishie_theme_options_do_page() {
 
 								<?php
 									$option_name = 'show_links_bottom';
-									$option_text = __( 'Display in the footer', 'chocolat' );
+									$option_text = __( 'Display in the footer', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text );
 								?>
 							</fieldset></td>
@@ -1145,9 +1148,9 @@ function mishie_theme_options_do_page() {
 
 						<!-- Information -->
 						<tr id="option-info" class="option-check">
-							<th scope="row"><?php _e( 'Information', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Information', 'mishie' ); ?></th>
 							<td>
-								<p><?php _e( 'When you fill in a profile or information, it will be displayed in the sidebar.', 'chocolat' ); ?></p>
+								<p><?php _e( 'When you fill in a profile or information, it will be displayed in the sidebar.', 'mishie' ); ?></p>
 								<?php
 									$option_name = 'info_side_text';
 									mishie_textarea( $options, $option_name );
@@ -1157,11 +1160,11 @@ function mishie_theme_options_do_page() {
 
 						<!-- Contact -->
 						<tr id="option-contact" class="option-check">
-							<th scope="row"><?php _e( 'Contact', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Contact', 'mishie' ); ?></th>
 							<td><fieldset>
 								<?php
 									$option_name = 'show_contact';
-									$option_text = __( 'View Contact', 'chocolat' );
+									$option_text = __( 'View Contact', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text );
 								?>
 								<?php if ( is_array( mishie_contact_options() ) ) :
@@ -1173,14 +1176,14 @@ function mishie_theme_options_do_page() {
 										?></p>
 										<div class="theme-left-space">
 										<?php if ( $option['id'] == 'mail' ) : ?>
-										<p><?php _e( 'E-mail address that is registered with the general settings are used. Please enter if you want to use the e-mail address of the other.', 'chocolat' ); ?></p><?php
+										<p><?php _e( 'E-mail address that is registered with the general settings are used. Please enter if you want to use the e-mail address of the other.', 'mishie' ); ?></p><?php
 											$option_name = 'mail_url';
-											$option_label = __( 'mailto', 'chocolat' ) . __( ':', 'chocolat' ) . '&nbsp;';
+											$option_label = __( 'mailto', 'mishie' ) . __( ':', 'mishie' ) . '&nbsp;';
 											$option_type = 'email';
 											mishie_textfield( $options, $option_name, $option_label, $option_type );
 
 										elseif ( $option['id'] == 'page' ) : ?>
-										<p><?php _e( 'URL of the Contact Page', 'chocolat' ); ?></p><?php
+										<p><?php _e( 'URL of the Contact Page', 'mishie' ); ?></p><?php
 											$option_name = 'page_url';
 											$option_label = '';
 											$option_type = 'url';
@@ -1194,55 +1197,55 @@ function mishie_theme_options_do_page() {
 
 						<!-- RSS -->
 						<tr>
-							<th scope="row"><?php _e( 'RSS', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'RSS', 'mishie' ); ?></th>
 							<td><fieldset><?php
 								$option_name = 'show_rss';
-								$option_text = __( 'View RSS', 'chocolat' );
+								$option_text = __( 'View RSS', 'mishie' );
 								mishie_checkbox( $options, $option_name, $option_text );
 
 								$option_name = 'show_feedly';
-								$option_text = __( 'View Feedly', 'chocolat' );
+								$option_text = __( 'View Feedly', 'mishie' );
 								mishie_checkbox( $options, $option_name, $option_text );
 							?></fieldset></td>
 						</tr>
 
 						<!-- Social Link -->
 						<tr id="option-sociallink" >
-							<th scope="row"><?php _e( 'Social Links', 'chocolat' ); ?></th>
-							<td><p><?php _e( 'To display the social links, use the "Social Links" of the custom menu.', 'chocolat' ); ?></p>
-								<p><?php _e( 'Position to display', 'chocolat' ) . _e( ':', 'chocolat' ); ?><br /><?php _e( 'Displays in a position that is set in the "Position to display" of "Links Setting".', 'chocolat' ); ?>
+							<th scope="row"><?php _e( 'Social Links', 'mishie' ); ?></th>
+							<td><p><?php _e( 'To display the social links, use the "Social Links" of the custom menu.', 'mishie' ); ?></p>
+								<p><?php _e( 'Position to display', 'mishie' ) . _e( ':', 'mishie' ); ?><br /><?php _e( 'Displays in a position that is set in the "Position to display" of "Links Setting".', 'mishie' ); ?>
 								</p>
-								<p><?php _e( 'A corresponding social links', 'chocolat' ) . _e( ':', 'chocolat' ); ?><br /><?php
-									echo __( 'Twitter', 'chocolat' ) . ', ' . 
-									__( 'Facebook', 'chocolat' ) . ', ' . 
-									__( 'Google+', 'chocolat' ) . ', ' . 
-									__( 'Tumblr', 'chocolat' ) . ', ' . 
-									__( 'Pinterest', 'chocolat' ) . ', ' . 
-									__( 'Instagram', 'chocolat' ) . ', ' . 
-									__( 'LinkedIn', 'chocolat' ) . ', ' . 
-									__( 'Flickr', 'chocolat' ) . ', ' . 
-									__( 'Dribbble', 'chocolat' ) . ', ' . 
-									__( 'YouTube', 'chocolat' ) . ', ' . 
-									__( 'Vimeo', 'chocolat' ) . ', ' . 
-									__( 'GitHub', 'chocolat' ) . ', ' . 
-									__( 'Viadeo', 'chocolat' ) . ', ' . 
-									__( 'Bloglovin', 'chocolat' ) . ', ' . 
-									__( 'pixiv', 'chocolat' );
+								<p><?php _e( 'A corresponding social links', 'mishie' ) . _e( ':', 'mishie' ); ?><br /><?php
+									echo __( 'Twitter', 'mishie' ) . ', ' . 
+									__( 'Facebook', 'mishie' ) . ', ' . 
+									__( 'Google+', 'mishie' ) . ', ' . 
+									__( 'Tumblr', 'mishie' ) . ', ' . 
+									__( 'Pinterest', 'mishie' ) . ', ' . 
+									__( 'Instagram', 'mishie' ) . ', ' . 
+									__( 'LinkedIn', 'mishie' ) . ', ' . 
+									__( 'Flickr', 'mishie' ) . ', ' . 
+									__( 'Dribbble', 'mishie' ) . ', ' . 
+									__( 'YouTube', 'mishie' ) . ', ' . 
+									__( 'Vimeo', 'mishie' ) . ', ' . 
+									__( 'GitHub', 'mishie' ) . ', ' . 
+									__( 'Viadeo', 'mishie' ) . ', ' . 
+									__( 'Bloglovin', 'mishie' ) . ', ' . 
+									__( 'pixiv', 'mishie' );
 							?></p></td>
 						</tr>
 
 						<!-- Copyright -->
 						<tr id="option-copy" class="option-check">
-							<th scope="row"><?php _e( 'Copyright', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Copyright', 'mishie' ); ?></th>
 							<td><fieldset>
 								<?php
 									$option_name = 'show_copyright';
-									$option_text = __( 'Display the copyright of Web site', 'chocolat' );
+									$option_text = __( 'Display the copyright of Web site', 'mishie' );
 									mishie_checkbox( $options, $option_name, $option_text );
 								?>
 								<div class="theme-left-space hidebox">
 									<p><?php echo mishie_get_copyright_text(); ?><br />
-									<?php _e( 'It will be displayed.', 'chocolat' ) . _e( 'Please enter if you want to change the text of copyright.', 'chocolat' ); ?></p>
+									<?php _e( 'It will be displayed.', 'mishie' ) . _e( 'Please enter if you want to change the text of copyright.', 'mishie' ); ?></p>
 									<?php
 										$option_name = 'copyright_text';
 										mishie_textarea( $options, $option_name );
@@ -1253,9 +1256,9 @@ function mishie_theme_options_do_page() {
 
 						<!-- Credit link -->
 						<tr id="option-creditlink" class="option-check">
-							<th scope="row"><?php _e( 'Credit link', 'chocolat' ); ?></th>
+							<th scope="row"><?php _e( 'Credit link', 'mishie' ); ?></th>
 							<td><fieldset>
-								<p><?php _e( 'Choose to enable or disable  the credit link of the author of the theme.', 'chocolat' ); ?><br /><span class="description"><?php _e( 'If you display credit link, I am very pleased :)', 'chocolat' ); ?></span></p>
+								<p><?php _e( 'Choose to enable or disable  the credit link of the author of the theme.', 'mishie' ); ?><br /><span class="description"><?php _e( 'If you display credit link, I am very pleased :)', 'mishie' ); ?></span></p>
 								<p><?php
 									$option_array = mishie_credit_link_options();
 									$option_name = 'credit_link_radio';
@@ -1269,21 +1272,21 @@ function mishie_theme_options_do_page() {
 				<!-- Slider -->
 				<div id="panel-slider" class="panel">
 					<h3 class="title"><?php echo $tab_title['slider']['title']; ?></h3>
-				<p class="panel-caption"><?php _e( 'Setting an image to be displayed the slider.', 'chocolat' ); ?><br /><?php _e( 'Please use the image of the same size.', 'chocolat' ); ?><?php printf( __( 'Recommended files %s', 'chocolat' ), __( '.png and .jpg (width 980px)', 'chocolat') ); ?></p>
+				<p class="panel-caption"><?php _e( 'Setting an image to be displayed the slider.', 'mishie' ); ?><br /><?php _e( 'Please use the image of the same size.', 'mishie' ); ?><?php printf( __( 'Recommended files %s', 'mishie' ), __( '.png and .jpg (width 980px)', 'mishie') ); ?></p>
 
 				<?php if ( function_exists( 'wp_enqueue_media' ) ) : ?>
 				<table class="form-table">
 					<tr>
-						<th scope="row"><?php _e( 'Slider Setting', 'chocolat' ); ?></th>
+						<th scope="row"><?php _e( 'Slider Setting', 'mishie' ); ?></th>
 						<td id="option-slider" class="option-check"><?php
 							$option_name = 'show_slider';
-							$option_text = __( 'Use the slider to the header image', 'chocolat' );
+							$option_text = __( 'Use the slider to the header image', 'mishie' );
 							mishie_checkbox( $options, $option_name, $option_text );
 						?></td>
 					</tr>
 
 					<tr id="option-slider-color" class="option-slider-children">
-						<th scope="row"><?php _e( 'The color of the slider', 'chocolat' ); ?></th>
+						<th scope="row"><?php _e( 'The color of the slider', 'mishie' ); ?></th>
 						<td><fieldset><?php
 							$option_array = mishie_slider_color_options();
 							$option_name = 'slider_color';
@@ -1302,14 +1305,14 @@ function mishie_theme_options_do_page() {
 							<?php mishie_media_uploader( $options, $option_id, $option_name ); ?>
 						<table class="table-no-space">
 							<tr>
-								<td><?php _e( 'Caption', 'chocolat' ) . _e( ':', 'chocolat' ); ?></td>
+								<td><?php _e( 'Caption', 'mishie' ) . _e( ':', 'mishie' ); ?></td>
 								<td><?php
 									$option_name = $option_id.'_caption';
 									mishie_textfield( $options, $option_name );
 								?></td>
 							</tr>
 							<tr>
-								<td><?php _e( 'Link URL', 'chocolat' ) . _e( ':', 'chocolat' ); ?></td>
+								<td><?php _e( 'Link URL', 'mishie' ) . _e( ':', 'mishie' ); ?></td>
 								<td><?php
 									$option_name = $option_id.'_link';
 									$option_type = 'url';
@@ -1321,20 +1324,20 @@ function mishie_theme_options_do_page() {
 					</tr><?php endforeach; endif; ?>
 				</table>
 				<?php else : ?>
-				<p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your version of WordPress.', 'chocolat' ); ?></p>
+				<p><?php _e( 'Sorry, WordPress you are using is not supported. Upgrade your version of WordPress.', 'mishie' ); ?></p>
 				<?php endif; ?>
 				</div><!-- /panel -->
 
 				<!-- Custom CSS -->
 				<div id="panel-css" class="panel">
 					<h3 class="title"><?php echo $tab_title['css']['title']; ?></h3>
-					<p class="panel-caption"><?php _e( 'The Custom CSS editor gives you can edit the theme, add or replace your theme\'s CSS.', 'chocolat' ); ?><br /><?php _e( 'This gives syntax coloring, auto-indent feature comes with.', 'chocolat' ); ?></p>
+					<p class="panel-caption"><?php _e( 'The Custom CSS editor gives you can edit the theme, add or replace your theme\'s CSS.', 'mishie' ); ?><br /><?php _e( 'This gives syntax coloring, auto-indent feature comes with.', 'mishie' ); ?></p>
 					<table class="form-table">
 						<tr><td><?php
 							$option_name = 'custom_css';
 							$option_cols = 50;
 							$option_rows = 3;
-							$content = isset( $options['custom_css'] ) && ! empty( $options['custom_css'] ) ? $options['custom_css'] : '/* ' . __( 'Enter Your Custom CSS Here', 'chocolat' ) . ' */';
+							$content = isset( $options['custom_css'] ) && ! empty( $options['custom_css'] ) ? $options['custom_css'] : '/* ' . __( 'Enter Your Custom CSS Here', 'mishie' ) . ' */';
 							mishie_textarea( $options, $option_name, $option_cols, $option_rows, $content );
 						?></td></tr>
 					</table>
@@ -1344,21 +1347,21 @@ function mishie_theme_options_do_page() {
 			<table id="save-option" class="form-table">
 				<tr><td><?php
 					$option_name = 'save_mishie_option';
-					$option_text = __( 'Save the value of the option of Chocolat in the database', 'chocolat' );
-					$text_desc = __( 'If you want to use the value of the option of Chocolat a child theme, please check the check box.', 'chocolat' );
+					$option_text = __( 'Save the value of the option of mishie in the database', 'mishie' );
+					$text_desc = __( 'If you want to use the value of the option of mishie a child theme, please check the check box.', 'mishie' );
 					mishie_checkbox( $options, $option_name, $option_text, $text_desc );
 				?></td></tr>
 			</table>
 
 			<div id="submit-button" class="clearfix">
-				<?php submit_button( __( 'Save Changes', 'chocolat' ), 'primary', 'save' ); ?>
-				<?php submit_button( __( 'Reset Defaults', 'chocolat' ), 'secondary', 'reset' ); ?>
+				<?php submit_button( __( 'Save Changes', 'mishie' ), 'primary', 'save' ); ?>
+				<?php submit_button( __( 'Reset Defaults', 'mishie' ), 'secondary', 'reset' ); ?>
 			</div>
 
 			<!-- Notice Option -->
 			<div id="notice-option" class="update-nag clearfix">
-				<p class="notice-title"><?php _e( 'If you can not "Save changes" or "reset":', 'chocolat' ); ?><span class="notice-open"><?php _e( 'More detailed', 'chocolat' ); ?></span><span class="notice-close"><?php _e( 'Dismiss this notice', 'chocolat' ); ?></span></p>
-				<p class="notice-desc"><?php echo __( 'When WAF setting of the server is enabled, you can not "Save changes" or "reset".', 'chocolat' ) . ' ' . __( 'Please save the settings of Chocolat after you disable the WAF configuration.', 'chocolat' ); ?><br /><?php _e( 'Once you have save the settings of Chocolat, for security, please reenable the WAF setting.', 'chocolat' ); ?><br /><?php _e( 'Please contact the server administrator for more information.', 'chocolat' ); ?></p>
+				<p class="notice-title"><?php _e( 'If you can not "Save changes" or "reset":', 'mishie' ); ?><span class="notice-open"><?php _e( 'More detailed', 'mishie' ); ?></span><span class="notice-close"><?php _e( 'Dismiss this notice', 'mishie' ); ?></span></p>
+				<p class="notice-desc"><?php echo __( 'When WAF setting of the server is enabled, you can not "Save changes" or "reset".', 'mishie' ) . ' ' . __( 'Please save the settings of mishie after you disable the WAF configuration.', 'mishie' ); ?><br /><?php _e( 'Once you have save the settings of mishie, for security, please reenable the WAF setting.', 'mishie' ); ?><br /><?php _e( 'Please contact the server administrator for more information.', 'mishie' ); ?></p>
 			</div>
 		</form>
 	</div><!-- /.wrap -->
@@ -1551,7 +1554,13 @@ function mishie_theme_options_validate( $input ) {
 			$input['new_posts_number'] = 5;
 		}
 		$input['new_posts_number'] = absint( $input['new_posts_number'] );
+		
+		// New arcive Posts
+		if ( ! isset( $input['show_new_archive_posts'] ) )
+			$input['show_new_archive_posts'] = null;
+		$input['show_new_archive_posts'] = ( $input['show_new_archive_posts'] == 1 ? 1 : 0 );
 
+		
 		if ( $input['new_posts_row'] < 1 )
 			$input['new_posts_row'] = 2;
 		$input['new_posts_row'] = absint( $input['new_posts_row'] );
@@ -1655,7 +1664,7 @@ function mishie_theme_options_validate( $input ) {
 		// Custom Css
 		$input['custom_css'] = wp_kses_stripslashes( $input['custom_css'] );
 
-		// save Chocolat option value ( child theme )
+		// save mishie option value ( child theme )
 		if ( ! isset( $input['save_mishie_option'] ) )
 			$input['save_mishie_option'] = null;
 		$input['save_mishie_option'] = ( $input['save_mishie_option'] == 1 ? 1 : 0 );

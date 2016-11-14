@@ -1,10 +1,10 @@
 <?php
 /**
  * Custom CSS
- * @package   Chocolat
+ * @package   mishie
  * @copyright Copyright (c) 2014 Mignon Style
  * @license   GNU General Public License v2.0
- * @since     Chocolat 1.1.6
+ * @since     mishie 1.1.6
  */
 
 /**

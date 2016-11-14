@@ -1,47 +1,71 @@
 <?php
 /**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Mishie
+ * The Content template
+ * @package   mishie
+ * @copyright Copyright (c) 2014 Mignon Style
+ * @license   GNU General Public License v2.0
+ * @since     mishie 1.0
  */
-
 ?>
+<section id="<?php echo esc_attr( $post -> post_name ); ?>" <?php post_class( 'post-section clearfix' ); ?>>
+	<div class="section-top clearfix">
+		<div class="entry-edit clearfix">
+			<?php edit_post_link( __( 'Edit', 'mishie' ), '<span class="post-edit">', '</span>' ); ?>
+		</div>
 
-<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		<?php mishie_entry_dates(); ?>
+        
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php mishie_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+		<div class="entry-title">
+			<?php if ( ! is_page() ) : ?><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php endif; ?>
+				<h2 class="post-title"><?php the_title_attribute(); ?></h2>
+			<?php if ( ! is_page() ) : ?></a><?php endif; ?>
+		</div>
+	</div><!-- /section-top -->
+    
+    <div class="section-center clearfix">
+	<?php
+		if ( has_post_thumbnail() && ! post_password_required() ) :
+		$options = mishie_get_option();
+		$thumbnail_name = ( ! empty( $options['show_featured_home'] ) && ! is_singular() ) ? 'home-post-thumbnail' : 'single-post-thumbnail';
+		$thumbnail_class = ( ! empty( $options['show_featured_home'] ) && ! is_singular() ) ? ' home-thumbnail' : '';
+	?>
+		<div class="entry-thumbnail<?php echo esc_attr( $thumbnail_class ); ?> thumbnail clearfix">
+			<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail( $thumbnail_name ); ?>
+			</a>
+		</div>
+		<?php endif; /* /has_post_thumbnail() && ! post_password_required() */ ?>
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mishie' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+		<div class="post-content">
+		<?php if ( is_page() ) : ?>
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div><!-- /entry-content -->
+		<?php else : ?>
+			<?php mishie_excerpt_content(); ?>
+		<?php endif; /* /post_password_required() || get_post_format() */ ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mishie' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+		<?php if ( wp_link_pages( 'echo=0' ) ) : ?>
+		<div class="post-pagination clearfix">
+			<?php wp_link_pages( array(
+				'before'         => '<div class="post-numbers">',
+				'after'          => '</div>',
+				'next_or_number' => 'number',
+				'pagelink'       => '<span class="numbers">%</span>'
+			) ); ?>
+		</div>
+		<?php endif; /* /wp_link_pages() */ ?>
 
-	<footer class="entry-footer">
-		<?php mishie_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</section><!-- #post-## -->
+		</div><!-- /post-content -->
+	</div><!-- /section-center -->
+<div class="section-bottom clearfix">
+		<div class="section-bottom-inner clearfix">
+			<?php mishie_entry_meta(); ?>
+		</div>
+	</div><!-- /section-bottom -->
+
+	
+</section><!-- /section -->
+
+<?php comments_template(); ?>

@@ -120,6 +120,9 @@ add_action( 'widgets_init', 'mishie_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mishie_scripts() {
+	
+	
+	
 	wp_enqueue_style( 'mishie-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'mishie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -144,10 +147,10 @@ function mishie_enqueue_styles() {
         wp_enqueue_style( 'mishie_ie', get_template_directory_uri().'/css/ie.css' );
     }
 
-    wp_enqueue_style( 'mishie_quicksand', '//fonts.googleapis.com/css?family=Quicksand' );
-    wp_enqueue_style( 'cmishie_font', get_template_directory_uri().'/css/font.css' );
+    //wp_enqueue_style( 'mishie_quicksand', '//fonts.googleapis.com/css?family=Quicksand' );
+    //wp_enqueue_style( 'cmishie_font', get_template_directory_uri().'/css/font.css' );
     
-    
+    wp_enqueue_style( 'mishie_boxer', get_template_directory_uri().'/plugin/boxer/jquery.fs.boxer.css' );
 
     if ( strtoupper( get_locale() ) == 'JA' ) {
         wp_enqueue_style( 'mishie_ja', get_template_directory_uri().'/css/ja.css' );
@@ -239,6 +242,8 @@ function add_custompost_type() {
 	flush_rewrite_rules();//パーマリンク設定を再設定(エラー回避のため)
 }
 add_action('init', 'add_custompost_type');//定義した「add_custompost_type」を実行
+//カテゴリーとタグの URL のリライトルールを設定
+add_rewrite_rule('news/newstype/([^/]+)/?$', 'index.php?newstype=$matches[1]', 'top');
 
 // カテゴリIDを取得する。
 function mishie_category_id($tax='category') {
@@ -269,6 +274,25 @@ function mishie_category_info($tax='category') {
     return $obj;
 }
 
+// カテゴリ情報を取得する。
+function mishie_tax_info($tax='newstype') {
+    global $post;
+	
+    $cat = get_the_terms($post->ID, $tax);
+    $obj = new stdClass;
+	
+	
+		
+    if ($cat) {
+        $cat = array_shift($cat);
+        $obj->name = $cat->name;
+        $obj->slug = $cat->slug;
+    } else {
+        $obj->name = '';
+        $obj->slug = '';
+    }
+    return $obj;
+}
 
 
 function get_featured_image_url() {
@@ -348,14 +372,15 @@ function mishie_breadcrumb() {
 
 		$itemtype_url = 'http://data-vocabulary.org/Breadcrumb';
 		$itemtype = 'itemscope itemtype="'.esc_url( $itemtype_url ).'"';
+		
 
 		$taxonomy_slug = get_query_var( 'taxonomy' );
 		$cpt = get_query_var( 'post_type' );
 
-		if ( !is_front_page() && !is_home() && !is_admin() ) : ?>
-			<div class="breadcrumb" <?php echo $itemtype; ?>>
+		if ( !is_front_page() && !is_admin() ) : ?>
+			<div class="breadcrumb">
 				<ol>
-				<li <?php echo $itemtype; ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><span itemprop="title" class="icon-home"><span class="bread-home"><?php bloginfo( 'name' ); ?></span></span></a></li><li class="breadmark">&gt;</li>
+				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><span class="bread-home">トップ</span></a></li><li class="breadmark">&gt;</li>
 
 			<?php if ( $taxonomy_slug && is_tax( $taxonomy_slug ) ) :
 				$query_tax = get_queried_object();
@@ -661,13 +686,77 @@ endif;
 if ( ! function_exists( 'mishie_new_post_list' ) ) :
 function mishie_new_post_list( $show_tag ) {
     $options = mishie_get_option();
+	
+	
 
     if ( ! empty( $options['show_new_posts'] ) ) {
+		
         mishie_post_list( $show_tag );
     }
 }
 endif;
 
+
+//-----------------------------------------------
+// New Post List
+if ( ! function_exists( 'mishie_new_archive_list' ) ) :
+function mishie_new_archive_list( $show_tag ) {
+    $options = mishie_get_option();	
+	
+
+    if ( ! empty( $options['show_archives_posts'] ) ) {
+		
+        mishie_post_archive_list( $show_tag );
+    }
+}
+endif;
+
+
+/* ----------------------------------------------
+ * 5.8.2.1 - mishie_post_archive_list
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_post_archive_list' ) ) :
+function mishie_post_archive_list( $show_tag ) {
+    $options = mishie_get_option();
+    // If the value is 0, use the value of the default
+    $show_num = 5;
+    $num_class = 'five-column';
+
+    $my_title = $options['new_posts_title'] ? $options['new_posts_title'] : __( '新着情報・お知らせ', 'mishie' );
+
+    if ( ! empty( $options['new_posts_number'] ) ) {
+        $show_num = absint( $options['new_posts_number'] );
+        $num_class = mishie_post_list_number( $show_num );
+        $show_num = absint( $options['new_posts_number'] * $options['new_posts_row'] );
+    }
+
+    $order = 'DESC';
+    $order_by = '';
+
+
+    $my_query = mishie_post_archive_data( $show_num, $show_tag, $order, $order_by );
+	
+    if ( $my_query -> have_posts() ) : ?>
+	<div id="top_info" class="<?php echo $show_tag; ?>-contents common-contents clearfix">
+    <h3 id="<?php echo $show_tag; ?>-title" class="common-title"><?php echo esc_attr( $my_title ); ?></h3>
+    <ul class="<?php echo $num_class; ?> clearfix" style="list-style:none;">
+        <?php while ( $my_query -> have_posts() ) : $my_query -> the_post(); ?>
+        <?php $cat_info = mishie_tax_info(); ?>
+        <li>
+            <span class="info_li_inner">
+                <span class="news_date"><?php the_time('Y年m月d日'); ?></span>
+                <span class="news_category <?php echo esc_attr($cat_info->slug); ?>"><?php echo esc_html($cat_info->name); ?></span>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </span>
+        </li>
+
+        <?php endwhile; wp_reset_query(); ?>
+    </ul>
+</div>
+<?php endif;
+}
+endif;
 
 /* ----------------------------------------------
  * 5.8.2 - View Post list
@@ -679,9 +768,11 @@ function mishie_post_list( $show_tag ) {
     // If the value is 0, use the value of the default
     $show_num = 5;
     $num_class = 'five-column';
+	
+	
 
-    if ( $show_tag == 'new' ) {
-        $my_title = $options['new_posts_title'] ? $options['new_posts_title'] : __( 'New Entry', 'mishie' );
+    if ( $show_tag == 'news' ) {
+        $my_title = $options['new_posts_title'] ? $options['new_posts_title'] : __( 'ブログ', 'mishie' );
 
         if ( ! empty( $options['new_posts_number'] ) ) {
             $show_num = absint( $options['new_posts_number'] );
@@ -721,11 +812,11 @@ function mishie_post_list( $show_tag ) {
     }
 
     $my_query = mishie_post_data( $show_num, $show_tag, $order, $order_by );
-
+	
     if ( $my_query -> have_posts() ) : ?>
-<div id="top_info" class="<?php echo $show_tag; ?>-contents common-contents clearfix">
+	<div id="top_info" class="<?php echo $show_tag; ?>-contents common-contents clearfix">
     <h3 id="<?php echo $show_tag; ?>-title" class="common-title"><?php echo esc_attr( $my_title ); ?></h3>
-    <ul class="<?php echo $num_class; ?> clearfix">
+    <ul class="<?php echo $num_class; ?> clearfix" style="list-style:none;">
         <?php while ( $my_query -> have_posts() ) : $my_query -> the_post(); ?>
         <?php $cat_info = mishie_category_info(); ?>
         <li>
@@ -744,6 +835,55 @@ function mishie_post_list( $show_tag ) {
 endif;
 
 
+/* ----------------------------------------------
+ * 5.8.3.2 - post data
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_post_archive_data' ) ) :
+function mishie_post_archive_data( $show_num, $show_tag, $order, $order_by ) {
+    global $post;
+    $tag_ID = '';
+    $taxonomy_ID = '';
+	$options = mishie_get_option();
+
+   	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$taxonomy_slug = get_query_var( 'taxonomy' );
+	$cpt = get_query_var( 'post_type' );
+
+	/*
+	$args = array(
+        'numberposts' => 5,                //表示（取得）する記事の数
+        'post_type' => 'news'    		//投稿タイプの指定
+    );
+    $customPosts = get_posts($args);
+
+	if($customPosts) :
+		foreach($customPosts as $post) { 
+			 	setup_postdata( $post );
+		}
+	endif;
+	
+	$taxonomy = get_query_var('newstype');
+	*/
+	
+    
+	
+	
+	
+	
+    $args =  array( 
+		'post_type' => 'news',
+    	'taxonomy' => 'newstype',    
+    'posts_per_page' => 5,
+    'paged' => $paged,
+    'order' => 'DESC'
+		);
+
+    $my_query = new WP_Query( $args );
+    return $my_query;
+  	
+}
+endif;
 
 /* ----------------------------------------------
  * 5.8.3.2 - post data
@@ -796,3 +936,340 @@ function mishie_post_data( $show_num, $show_tag, $order, $order_by ) {
     return $my_query;
 }
 endif;
+/* ----------------------------------------------
+ * 5.3 - entry sticky & date
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_entry_dates' ) ) :
+function mishie_entry_dates() {
+	if (! is_page() ) {
+		
+		echo '<div class="entry-dates rollover">'."\n";
+		if ( ! is_singular() ) {
+			echo '<a href="'.get_permalink().'">';
+		}
+
+		if ( is_sticky() && ! is_single() && ! is_paged() ) {
+			echo '<p class="entry-sticky icon-crown"><span>'.__( 'Attention', 'mishie' ).'</span></p>';
+		}
+		echo '<div class="burst-12">';		
+		echo '<time class="entry-date" datetime="'.get_the_date( 'c' ).'">';
+		echo '<div class="hiduke">';	
+		echo '<span class="entry-year">'.get_the_date( 'Y' ).'</span><span class="entry-month">'.get_the_date( 'm/d' ).'</span>';
+		echo '</div>';
+		echo '</time>';		
+		echo '</div>';
+		if ( ! is_singular() ) {
+			echo '</a>'."\n";
+		}
+		echo '</div>';
+		
+	}
+}
+endif;
+
+/* ----------------------------------------------
+ * 2.4.4 - Read More (the_excerpt or the_content )
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_excerpt_content' ) ) :
+function mishie_excerpt_content() {
+	$options = mishie_get_option();
+	echo '<div class="entry-summary">';
+
+	if ( ! empty( $options['read_more_radio'] ) && $options['read_more_radio'] == 'more_quicktag' ) {
+		$more_link_text = $options['moretag_text'] ? esc_attr( $options['moretag_text'] ) : sprintf( __( 'READ%sMORE', 'mishie' ), '<br />' );
+		$strip_teaser = false;
+
+		if ( empty( $options['show_more_link'] ) ) {
+			$more_link_text ='';
+			$strip_teaser = true;
+		}
+		the_content( $more_link_text, $strip_teaser, '' );
+	} else {
+		echo '<div class="clearfix">'.get_the_excerpt().'</div>';
+		echo '<p class="more-link rollover"><a href="'.get_permalink().'">'.sprintf( __( 'READ%sPOST', 'mishie' ), '<br />' ).'</a></p>';
+	}
+	echo '</div>';
+}
+endif;
+
+/* ----------------------------------------------
+ * 5.4 - entry category & tags & author
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_entry_meta' ) ) :
+function mishie_entry_meta() {
+	if ( ! is_page() ) {
+		global $wp_query, $post;
+		$options = mishie_get_option();
+		$taxonomy_names = '';
+
+		echo '<div class="entry_meta clearfix">'."\n";
+		// Categorys or Custom taxonomy
+		if ( get_post_type() == 'post' ) {
+			$taxonomy_names = 'category';
+		} else {
+			$taxonomy_names = get_post_taxonomies( $post->ID );
+		}
+		if ( ! empty( $taxonomy_names ) ) {
+			$taxonomy_names = is_array( $taxonomy_names ) ? $taxonomy_names[0] : $taxonomy_names;
+			the_terms( $post->ID, $taxonomy_names, '<p class="entry-category icon-folder-open clearfix">', ' | ', '</p>' );
+		}
+		// Tags
+		$tag_list = get_the_tag_list( '', ', ' );
+		if ( $tag_list ) {
+			echo '<p class="entry-tags icon-tag clearfix">'.$tag_list.'</p>'."\n";
+		}
+		// show index page comments number
+		if ( ! is_singular() &&  ! empty( $options['show_index_comments'] ) ) {
+			echo '<p class="comments-number">';
+			comments_popup_link( __( 'No Comments', 'mishie' ), __( '1 Comment', 'mishie' ), __( '% Comments', 'mishie' ), 'icon-comment', __( 'Comments Off', 'mishie' ) );
+			echo '</p>';
+		}
+		// Post author
+		if ( ! empty( $options['show_author'] ) && ( ! in_array( get_post_type(), array( 'page', 'attachment' ) ) ) ) {
+			echo '<p class="entry-author"><span class="author vcard"><a href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author" class="icon-pencil fn">'.get_the_author().'</a></span></p>'."\n";
+		}
+		echo '</div>'."\n";
+	}
+}
+endif;
+
+
+/* ----------------------------------------------
+ * 2.3 - comment form
+ * --------------------------------------------*/
+
+/* ----------------------------------------------
+ * 2.3.1 - comments number
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_get_comments_only_number' ) ) :
+function mishie_get_comments_only_number() {
+	global $id;
+	$comment_cnt = 0;
+	$comments = get_approved_comments( $id );
+	foreach ( $comments as $comment ) {
+		if ( $comment->comment_type === '' ) {
+			$comment_cnt++;
+		}
+	}
+	return $comment_cnt;
+}
+endif;
+
+/* ----------------------------------------------
+ * 2.3.2 - pings (trackback + pingback) number
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_get_pings_only_number' ) ) :
+function mishie_get_pings_only_number() {
+	$trackback_cnt = get_comments_number() - mishie_get_comments_only_number();
+	return $trackback_cnt;
+}
+endif;
+
+/* ----------------------------------------------
+ * 2.3.3 - comment
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_theme_comment' ) ) :
+function mishie_theme_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	$no_avatars = '';
+	if ( ! get_avatar( $comment ) ) {
+		$no_avatars = 'no-avatars';
+	}
+?>
+	<li <?php comment_class( $no_avatars ); ?>>
+	<article id="comment-<?php comment_ID(); ?>" class="comment-body clearfix">
+		<?php if ( $comment->comment_approved == '0' ) : ?>
+			<p class="comment-awaiting-moderation"><?php _e( 'This comment is awaiting moderation.', 'mishie' ) ?></p>
+		<?php else : ?>
+		<div class="comment-author-img"><?php echo get_avatar( $comment, $size='50' ); ?></div>
+
+		<div class="comment-center">
+			<div class="comment-author-data">
+				<span class="comment-author"><?php comment_author_url_link( comment_author_link() , '', '' ); ?><span class="says">says:</span></span>
+
+				<span class="reply"><?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'mishie' ), 'depth' => $depth, 'max_depth' => $args['max_depth']) ) ); ?></span>
+				<?php edit_comment_link( __( 'Edit', 'mishie' ), '<span class="edit-link">', '</span>' ); ?>
+			</div>
+
+			<div class="comment-content">
+				<?php comment_text(); ?>
+			</div>
+
+			<div class="comment-meta commentmetadata">
+				<div class="comment-metadata"><?php comment_date(); ?>&nbsp;<?php comment_time(); ?></div>
+			</div>
+		</div>
+		<?php endif; ?>
+	</article>
+<?php
+}
+endif;
+
+/* ----------------------------------------------
+ * 2.3.4 - pings (trackback + pingback)
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_theme_ping' ) ) :
+function mishie_theme_ping() {
+	global $comments, $comment, $post;
+
+	$my_order = 'DESC';
+	if ( get_option( 'comment_order' ) == 'asc' )
+		$my_order = 'ASC';
+
+	$my_comments = get_comments( array(
+		'number'      => '',
+		'status'      => 'approve',
+		'post_status' => 'publish',
+		'post_id'     => $post->ID,
+		'order'       => $my_order,
+	) );
+
+	$pings_number = mishie_get_pings_only_number();
+?>
+<div id="pings" class="comments-inner pings-inner common-contents clearfix">
+	<h3 id="pings-title" class="common-title"><?php printf( __( 'Trackback %d', 'mishie' ), absint( $pings_number ) ); ?></h3>
+	<ol class="comment-list">
+	<?php foreach ( $my_comments as $comment ) : ?>
+		<?php if ( get_comment_type() != 'comment' ) : ?>
+		<li <?php comment_class(); ?>>
+		<article id="comment-<?php comment_ID(); ?>" class="comment-body clearfix">
+			<div class="comment-center">
+				<div class="comment-author-data"><span class="comment-author"><?php comment_author_url_link( comment_author_link() , '', '' ); ?></span>
+					<?php edit_comment_link( __( 'Edit', 'mishie' ), '<span class="edit-link">', '</span>' ); ?>
+				</div>
+
+				<div class="comment-meta commentmetadata">
+					<div class="comment-metadata"><?php comment_date(); ?>&nbsp;<?php comment_time(); ?></div>
+				</div>
+			</div>
+		</article>
+		</li>
+		<?php endif; ?>
+	<?php endforeach; ?>
+	</ol><!-- /comment-list -->
+</div><!-- /comments-inner -->
+<?php
+}
+endif;
+
+/* ----------------------------------------------
+ * 2.3.5 - no comments
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_no_comment' ) ) :
+function mishie_no_comment() {
+	$options = mishie_get_option();
+	if ( ! empty( $options['show_no_comment'] ) ) {
+?>
+	<div class="no-comments common-contents clearfix">
+		<p><?php _e( 'Comments are closed.', 'mishie' ); ?></p>
+	</div>
+<?php
+	}
+}
+endif;
+
+/* ----------------------------------------------
+ * 3.5.5 - Add class to previous_post_link
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_previous_post_link' ) ) :
+function mishie_previous_post_link( $output ) {
+	$search = array( 'rel="prev">', '</a>' );
+	$replace = array( 'rel="prev"><p class="prev-btn">▲</p><p class="prev-link">', '</p></a>' );
+	$output = str_replace( $search, $replace, $output );
+	return $output;
+}
+endif;
+add_filter( 'previous_post_link', 'mishie_previous_post_link' );
+
+/* ----------------------------------------------
+ * 3.5.6 - Add class to next_post_link
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_next_post_link' ) ) :
+function mishie_next_post_link( $output ) {
+	$search = array( 'rel="next">', '</a>' );
+	$replace = array( 'rel="next"><p class="next-link">', '</p><p class="next-btn">▲</p></a>' );
+	$output = str_replace( $search, $replace, $output );
+	return $output;
+}
+endif;
+add_filter( 'next_post_link', 'mishie_next_post_link' );
+/* ----------------------------------------------
+ * 5.6 - pagination & prevnext-page
+ * --------------------------------------------*/
+
+/* ----------------------------------------------
+ * 5.6.1 - pagination
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_pagination' ) ) :
+function mishie_pagination() {
+	global $wp_query, $paged;
+	$big = 999999999;
+
+	$pages = $wp_query -> max_num_pages;
+	if ( empty( $paged ) ) $paged = 1;
+
+	if ( 1 < $pages ) {
+		$mid_size = ( mishie_is_mobile() ) ? 0 : 3 ;
+		echo '<div class="pagination clearfix">'."\n";
+		echo paginate_links( array(
+			'current'   => max( 1, get_query_var( 'paged' ) ),
+			'total'     => $wp_query -> max_num_pages,
+			'mid_size'  => $mid_size,
+			'prev_text' => '&lsaquo;',
+			'next_text' => '&rsaquo;',
+			'type'      => 'list'
+		) );
+		echo '</div>';
+	}
+}
+endif;
+
+/* ----------------------------------------------
+ * 5.6.2 - prevnext-page
+ * --------------------------------------------*/
+
+if ( ! function_exists( 'mishie_prevnext' ) ) :
+function mishie_prevnext( $prevnext_area = '' ) {
+	if ( is_single() && ! is_attachment() ) {
+		if ( get_previous_post() || get_next_post() ) {
+			$prevnext_class = '';
+
+			if ( $prevnext_area == 'footer' ) {
+				$prevnext_class = ' prevnext-footer';
+			}
+			?>
+			<div class="prevnext-page<?php echo $prevnext_class; ?>">
+				<div class="paging clearfix">
+					<?php previous_post_link( '<div class="page-prev clearfix">%link</div>' ); ?>
+					<?php next_post_link( '<div class="page-new clearfix">%link</div>' ); ?>
+				</div>
+			</div>
+			<?php
+		}
+	}
+}
+endif;
+
+
+function new_excerpt_mblength($length) {
+     return 200; //抜粋する文字数を50文字に設定
+}
+add_filter('excerpt_mblength', 'new_excerpt_mblength');
+
+function new_excerpt_more() {
+	global  $post;
+     return '<a href="'. get_permalink($post->ID) . '">' . '<br>《続きを読む》' . '</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
